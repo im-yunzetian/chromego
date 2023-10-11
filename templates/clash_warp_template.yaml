@@ -1,0 +1,80 @@
+port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
+dns:
+  enable: true
+  listen: :53
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: 
+    - 223.5.5.5
+    - 8.8.8.8
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fallback:
+    - https://1.0.0.1/dns-query
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+proxies:    
+  - name: WARP
+    type: wireguard
+    server: engage.cloudflareclient.com
+    port: 2408
+    ip: 172.16.0.2
+    ipv6: 2606:4700:110:87c0:ba32:773a:8d44:e353
+    private-key: +HpHpY/KjSv5hJdGrN2ok1A6CKhCmTQv5Unwyul9S1g=
+    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+    udp: true
+    reserved: [0,0,0]
+    remote-dns-resolve: true  
+    dns: [ 1.1.1.1, 8.8.8.8 ]
+    dialer-proxy: "WARP前置节点"
+
+proxy-groups:
+  - name: 节点选择
+    type: select
+    proxies:
+      - 自动选择
+      - 负载均衡
+      - 手动选择
+      - WARP
+      - DIRECT
+  - name: WARP前置节点
+    type: select
+    proxies:
+      - 自动选择
+      - 负载均衡
+      - 手动选择
+
+  - name: 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+
+  - name: 手动选择
+    type: select
+
+  - name: 负载均衡
+    type: load-balance #负载均衡
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    #lazy: true
+    #disable-udp: true
+    strategy: round-robin #作为前置节点⽤这个⽐较好
+
+      
+rules:
+  # - DOMAIN,域名,DIRECT
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,节点选择
