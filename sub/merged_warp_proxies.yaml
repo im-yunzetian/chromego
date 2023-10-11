@@ -42,7 +42,7 @@ proxies:
   dns:
   - 1.1.1.1
   - 8.8.8.8
-  dialer-proxy: WARP
+  dialer-proxy: WARP前置节点
 - name: meta_hysteria_01
   type: hysteria
   server: hy2.dtku47.xyz
@@ -231,7 +231,7 @@ proxy-groups:
   - hysteria_1
   - hysteria_2
   - hysteria_3
-- name: WARP
+- name: WARP前置节点
   type: select
   proxies:
   - 自动选择
@@ -257,7 +257,6 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - {}
   - meta_hysteria_01
   - meta_hysteria_11
   - meta_hysteria_21

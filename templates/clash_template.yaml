@@ -24,8 +24,8 @@ dns:
     geoip-code: CN
     ipcidr:
       - 240.0.0.0/4
-proxies:
-  - { }
+#proxies:
+#  - { }
 proxy-groups:
   - name: 节点选择
     type: select
@@ -38,8 +38,6 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    proxies:
-      - { }
 
 rules:
   - GEOIP,LAN,DIRECT

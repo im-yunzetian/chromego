@@ -24,8 +24,51 @@ dns:
     geoip-code: CN
     ipcidr:
     - 240.0.0.0/4
+proxy-groups:
+- name: 节点选择
+  type: select
+  proxies:
+  - 自动选择
+  - DIRECT
+  - meta_hysteria_01
+  - meta_hysteria_11
+  - meta_hysteria_21
+  - meta_hysteria_31
+  - meta_hysteria_41
+  - meta_hysteria_51
+  - meta_hysteria_61
+  - meta_hysteria_71
+  - meta_vless_81
+  - meta_hysteria_91
+  - hysteria_0
+  - hysteria_1
+  - hysteria_2
+  - hysteria_3
+- name: 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - meta_hysteria_01
+  - meta_hysteria_11
+  - meta_hysteria_21
+  - meta_hysteria_31
+  - meta_hysteria_41
+  - meta_hysteria_51
+  - meta_hysteria_61
+  - meta_hysteria_71
+  - meta_vless_81
+  - meta_hysteria_91
+  - hysteria_0
+  - hysteria_1
+  - hysteria_2
+  - hysteria_3
+rules:
+- GEOIP,LAN,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,节点选择
 proxies:
-- {}
 - name: meta_hysteria_01
   type: hysteria
   server: hy2.dtku47.xyz
@@ -191,48 +234,3 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-proxy-groups:
-- name: 节点选择
-  type: select
-  proxies:
-  - 自动选择
-  - DIRECT
-  - meta_hysteria_01
-  - meta_hysteria_11
-  - meta_hysteria_21
-  - meta_hysteria_31
-  - meta_hysteria_41
-  - meta_hysteria_51
-  - meta_hysteria_61
-  - meta_hysteria_71
-  - meta_vless_81
-  - meta_hysteria_91
-  - hysteria_0
-  - hysteria_1
-  - hysteria_2
-  - hysteria_3
-- name: 自动选择
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - {}
-  - meta_hysteria_01
-  - meta_hysteria_11
-  - meta_hysteria_21
-  - meta_hysteria_31
-  - meta_hysteria_41
-  - meta_hysteria_51
-  - meta_hysteria_61
-  - meta_hysteria_71
-  - meta_vless_81
-  - meta_hysteria_91
-  - hysteria_0
-  - hysteria_1
-  - hysteria_2
-  - hysteria_3
-rules:
-- GEOIP,LAN,DIRECT
-- GEOIP,CN,DIRECT
-- MATCH,节点选择

@@ -220,11 +220,15 @@ def process_xray(data, index):
 def update_proxy_groups(config_data, merged_proxies):
     for group in config_data['proxy-groups']:
         if group['name'] in ['节点选择','自动选择']:
+            if 'proxies' not in group.keys():
+                group['proxies']=[]
             group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
 
 def update_warp_proxy_groups(config_warp_data, merged_proxies):
     for group in config_warp_data['proxy-groups']:
-        if group['name'] in ['节点选择','自动选择','WARP']:
+        if group['name'] in ['节点选择','自动选择','WARP前置节点']:
+            if 'proxies' not in group.keys():
+                group['proxies']=[]
             group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
 # 定义一个空列表用于存储合并后的代理配置
 merged_proxies = []
@@ -253,6 +257,8 @@ with open('./templates/clash_warp_template.yaml', 'r', encoding='utf-8') as file
     config_warp_data = yaml.safe_load(file)
 
 # 添加合并后的代理到proxies部分
+if 'proxies' not in config_data.keys():
+    config_data['proxies']=[]
 config_data['proxies'].extend(merged_proxies)
 config_warp_data['proxies'].extend(merged_proxies)
 
@@ -296,6 +302,8 @@ with open('./templates/clash_warp_template.yaml', 'r', encoding='utf-8') as file
     config_warp_data = yaml.safe_load(file)
 
 # 添加合并后的代理到proxies部分
+if 'proxies' not in config_data.keys():
+    config_data['proxies']=[]
 config_data['proxies'].extend(merged_proxies)
 config_warp_data['proxies'].extend(merged_proxies)
 
