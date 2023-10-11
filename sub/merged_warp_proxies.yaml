@@ -42,7 +42,7 @@ proxies:
   dns:
   - 1.1.1.1
   - 8.8.8.8
-  dialer-proxy: WARP前置节点
+  dialer-proxy: WARP
 - name: meta_hysteria_01
   type: hysteria
   server: hy2.dtku47.xyz
@@ -231,7 +231,7 @@ proxy-groups:
   - hysteria_1
   - hysteria_2
   - hysteria_3
-- name: WARP前置节点
+- name: WARP
   type: select
   proxies:
   - 自动选择
@@ -256,6 +256,22 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
+  proxies:
+  - {}
+  - meta_hysteria_01
+  - meta_hysteria_11
+  - meta_hysteria_21
+  - meta_hysteria_31
+  - meta_hysteria_41
+  - meta_hysteria_51
+  - meta_hysteria_61
+  - meta_hysteria_71
+  - meta_vless_81
+  - meta_hysteria_91
+  - hysteria_0
+  - hysteria_1
+  - hysteria_2
+  - hysteria_3
 - name: 手动选择
   type: select
 - name: 负载均衡

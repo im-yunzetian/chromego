@@ -25,14 +25,7 @@ dns:
     ipcidr:
     - 240.0.0.0/4
 proxies:
-- name: 油管-绵阿羊
-  type: trojan
-  server: a
-  port: 1
-  password: 72ac875a-f5b9-461e-a7a4-942b468b0d83
-  udp: true
-  sni: gw.alicdn.com
-  skip-cert-verify: true
+- {}
 - name: meta_hysteria2_01
   type: hysteria2
   server: 108.181.22.205
@@ -290,7 +283,6 @@ proxy-groups:
   proxies:
   - 自动选择
   - DIRECT
-  - 油管-绵阿羊
   - meta_hysteria2_01
   - meta_hysteria_11
   - meta_tuic_21
@@ -321,10 +313,32 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 油管-绵阿羊
+  - {}
+  - meta_hysteria2_01
+  - meta_hysteria_11
+  - meta_tuic_21
+  - meta_hysteria2_31
+  - meta_hysteria_41
+  - meta_hysteria2_51
+  - meta_hysteria_61
+  - meta_hysteria_71
+  - meta_hysteria_81
+  - meta_hysteria_91
+  - meta_hysteria_101
+  - meta_hysteria_111
+  - meta_hysteria_121
+  - meta_hysteria_131
+  - meta_vless_141
+  - meta_hysteria_151
+  - hysteria_0
+  - hysteria_1
+  - hysteria_2
+  - hysteria_3
+  - hysteria2_0
+  - hysteria2_1
+  - hysteria2_2
+  - hysteria2_3
 rules:
-- DOMAIN,clash.razord.top,DIRECT
-- DOMAIN,yacd.haishan.me,DIRECT
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT
 - MATCH,节点选择

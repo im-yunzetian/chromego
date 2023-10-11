@@ -37,7 +37,7 @@ proxies:
     reserved: [0,0,0]
     remote-dns-resolve: true  
     dns: [ 1.1.1.1, 8.8.8.8 ]
-    dialer-proxy: "WARP前置节点"
+    dialer-proxy: "WARP"
 
 proxy-groups:
   - name: 节点选择
@@ -48,7 +48,7 @@ proxy-groups:
       - 手动选择
       - WARP
       - DIRECT
-  - name: WARP前置节点
+  - name: WARP
     type: select
     proxies:
       - 自动选择
@@ -60,6 +60,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
+    proxies:
+      - { }
 
   - name: 手动选择
     type: select

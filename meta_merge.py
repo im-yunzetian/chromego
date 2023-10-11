@@ -219,12 +219,12 @@ def process_xray(data, index):
 
 def update_proxy_groups(config_data, merged_proxies):
     for group in config_data['proxy-groups']:
-        if group['name'] in ['节点选择']:
+        if group['name'] in ['节点选择','自动选择']:
             group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
 
 def update_warp_proxy_groups(config_warp_data, merged_proxies):
     for group in config_warp_data['proxy-groups']:
-        if group['name'] in ['节点选择','WARP前置节点']:
+        if group['name'] in ['节点选择','自动选择','WARP']:
             group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
 # 定义一个空列表用于存储合并后的代理配置
 merged_proxies = []
