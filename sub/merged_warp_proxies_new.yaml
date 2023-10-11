@@ -280,17 +280,17 @@ proxies:
   skip-cert-verify: true
 - name: hysteria2_2
   type: hysteria2
-  server: www2.dtku49.xyz
-  port: 54406
-  password: ebcbb37b
+  server: www.dtku48.xyz
+  port: 56411
+  password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
   skip-cert-verify: true
 - name: hysteria2_3
   type: hysteria2
-  server: www.dtku48.xyz
-  port: 56411
-  password: dongtaiwang.com
+  server: www2.dtku49.xyz
+  port: 54406
+  password: ebcbb37b
   fast-open: true
   sni: www.bing.com
   skip-cert-verify: true
