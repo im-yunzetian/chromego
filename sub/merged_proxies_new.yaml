@@ -25,7 +25,6 @@ dns:
     ipcidr:
     - 240.0.0.0/4
 proxies:
-- {}
 - name: meta_hysteria2_01
   type: hysteria2
   server: 108.181.22.205
@@ -313,7 +312,6 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - {}
   - meta_hysteria2_01
   - meta_hysteria_11
   - meta_tuic_21
