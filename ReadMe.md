@@ -48,15 +48,15 @@ https://mareep.netlify.app/sub/shadowrocket_base64.txt
   
 ### 不套warp版本（clashmeta
 ```
-https://raw.githubusercontent.com/vveg26/chromego_merge/main/sub/merged_proxies.yaml
+https://raw.githubusercontent.com/im-yunzetian/chromego/main/sub/merged_proxies.yaml
 ```
 ### 套warp版本（clashmeta
 ```
-https://raw.githubusercontent.com/vveg26/chromego_merge/main/sub/merged_warp_proxies.yaml
+https://raw.githubusercontent.com/im-yunzetian/chromego/main/sub/merged_warp_proxies.yaml
 ```
 ### 通用链接 shadowrocket-nekoray
 ```
-https://raw.githubusercontent.com/vveg26/chromego_merge/main/sub/shadowrocket_base64.txt
+https://raw.githubusercontent.com/im-yunzetian/chromego/main/sub/shadowrocket_base64.txt
 ```
 
 </details>
