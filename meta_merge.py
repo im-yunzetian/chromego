@@ -253,7 +253,6 @@ with open('./templates/clash_warp_template.yaml', 'r', encoding='utf-8') as file
     config_warp_data = yaml.safe_load(file)
 
 # 添加合并后的代理到proxies部分
-config_data['proxies'] = []
 config_data['proxies'].extend(merged_proxies)
 config_warp_data['proxies'].extend(merged_proxies)
 
@@ -297,7 +296,6 @@ with open('./templates/clash_warp_template.yaml', 'r', encoding='utf-8') as file
     config_warp_data = yaml.safe_load(file)
 
 # 添加合并后的代理到proxies部分
-config_data['proxies']=[]
 config_data['proxies'].extend(merged_proxies)
 config_warp_data['proxies'].extend(merged_proxies)
 

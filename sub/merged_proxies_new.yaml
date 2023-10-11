@@ -25,6 +25,7 @@ dns:
     ipcidr:
     - 240.0.0.0/4
 proxies:
+- {}
 - name: meta_hysteria2_01
   type: hysteria2
   server: 108.181.22.205
