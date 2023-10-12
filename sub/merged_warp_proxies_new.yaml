@@ -27,8 +27,8 @@ dns:
 proxies:
 - name: WARP
   type: wireguard
-  server: engage.cloudflareclient.com
-  port: 2408
+  server: 162.159.192.12
+  port: 500
   ip: 172.16.0.2
   ipv6: 2606:4700:110:87c0:ba32:773a:8d44:e353
   private-key: +HpHpY/KjSv5hJdGrN2ok1A6CKhCmTQv5Unwyul9S1g=
