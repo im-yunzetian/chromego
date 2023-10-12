@@ -1,29 +1,29 @@
 {
-  "log": {
-    "disabled": false,
-    "level": "info",
-    "timestamp": true
-  },
   "inbounds": [
     {
       "type": "mixed",
+      "tag": "mixed-in",
       "listen": "::",
-      "listen_port": 10000
+      "listen_port": 1080,
+      "sniff": true,
+      "set_system_proxy": false
     }
   ],
   "outbounds": [
     {
-      "type": "hysteria2",
-      "server": "www2.dtku49.xyz",
-      "server_port": 54406,
-      "up_mbps": 30,
-      "down_mbps": 150,
-      "password": "ebcbb37b",
+      "type": "tuic",
+      "tag": "tuic-6132",
+      "server": "sing2.dtku47.xyz",
+      "server_port": 55667,
+      "uuid": "2dca51f2-8968-479b-b086-4a62269f3f37",
+      "password": "dongtaiwang",
+      "congestion_control": "bbr",
+      "udp_relay_mode": "native",
+      "zero_rtt_handshake": false,
+      "heartbeat": "10s",
       "tls": {
         "enabled": true,
-        "disable_sni": false,
-        "server_name": "www.bing.com",
-        "insecure": true,
+        "server_name": "sing2.dtku47.xyz",
         "alpn": [
           "h3"
         ]
