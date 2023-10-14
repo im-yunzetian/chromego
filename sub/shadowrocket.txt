@@ -12,7 +12,7 @@ hysteria://hy2.dtku47.xyz:15566?peer=&auth=jQrGpwSqp34P&insecure=0&upmbps=50&dow
 hysteria://hy1.dtku47.xyz:22334?peer=&auth=lASdKzWK0VxL&insecure=0&upmbps=50&downmbps=80&alpn=h3&mport=22334&obfs=&protocol=udp&fastopen=1#hysteria_meta_11
 hysteria://108.181.22.239:17727?peer=youku.com&auth=&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=17727&obfs=&protocol=udp&fastopen=1#hysteria_meta_12
 hysteria://www.dtku50.xyz:43250?peer=bing.com&auth=&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=43250&obfs=&protocol=udp&fastopen=1#hysteria_meta_13
-vless://34f36b97-1fb7-41f3-8db4-912cc69e724a@45.150.165.61:25678?security=reality&allowInsecure0&flow=xtls-rprx-vision&type=tcp&fp=chrome&pbk=sJsSZcA2DyAHDTcoe8Utbz9JaXJPMVmtHmiXxWmcExc&sid=&sni=itunes.apple.com&serviceName=&path=&host=#vless_meta_14
+vless://34f36b97-1fb7-41f3-8db4-912cc69e724a@45.150.165.79:25678?security=reality&allowInsecure0&flow=xtls-rprx-vision&type=tcp&fp=chrome&pbk=sJsSZcA2DyAHDTcoe8Utbz9JaXJPMVmtHmiXxWmcExc&sid=&sni=itunes.apple.com&serviceName=&path=&host=#vless_meta_14
 hysteria://www3.dtku49.xyz:58693?peer=bing.com&auth=&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=58693&obfs=&protocol=udp&fastopen=1#hysteria_meta_15
 hysteria://167.160.91.115:13928?peer=paypal.com&auth=BF0LL4L2jlqSdW3KxjQv81AiFFjj90vWRHeUoqUuTVPeDAGvq3&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=&protocol=udp&fastopen=1#hysteria_0
 hysteria://173.234.25.52:20164?peer=www.microsoft.com&auth=Ljg6NNEATDqP97hdAdHe1lJv7ggtKc0h7zmCCZKCX3qY0LR64F&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=&protocol=udp&fastopen=1#hysteria_1
@@ -21,7 +21,7 @@ hysteria://51.158.54.46:11926?peer=youku.com&auth=Trz2alKwzCImRAXI3nXfpo1ylpHfqO
 hysteria2://4f58555f@108.181.22.155:17965?insecure=1&sni=www.bing.com#hysteria2_0
 hysteria2://fc4488ef@167.160.90.252:60930?insecure=1&sni=www.bing.com#hysteria2_1
 hysteria2://dongtaiwang.com@www.dtku48.xyz:56411?insecure=1&sni=www.bing.com#hysteria2_2
-hysteria2://ebcbb37b@www2.dtku49.xyz:54406?insecure=1&sni=www.bing.com#hysteria2_3
+hysteria2://dongtaiwang.com@www.dtku46.xyz:43841?insecure=1&sni=www.bing.com#hysteria2_3
 vless://0773256c-d020-436d-afea-6eee7cb6c872@dongtaiwang3.com:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=xray1.freegradely.xyz&serviceName=&path=/bodhws&host=xray1.freegradely.xyz#vless_0
 vless://f5c180eb-fbce-49ac-9029-482eca9385c0@dongtaiwang3.com:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=xray1.freeh1.xyz&serviceName=&path=/gzogws&host=xray1.freeh1.xyz#vless_2
 vless://f5c180eb-fbce-49ac-9029-482eca9385c0@dongtaiwang2.com:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=xray1.freeh1.xyz&serviceName=&path=/gzogws&host=xray1.freeh1.xyz#vless_3
