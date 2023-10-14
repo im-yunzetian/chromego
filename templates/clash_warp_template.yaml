@@ -30,8 +30,8 @@ proxies:
     server: engage.cloudflareclient.com
     port: 2408
     ip: 172.16.0.2
-    ipv6: 2606:4700:110:87c0:ba32:773a:8d44:e353
-    private-key: +HpHpY/KjSv5hJdGrN2ok1A6CKhCmTQv5Unwyul9S1g=
+    ipv6: 2606:4700:110:86a4:1c40:7fe1:5441:ef8d
+    private-key: YCH/5O1fHrhsrQDIESVjSx7sEHzhefy0D1p3B+bnnVg=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
     udp: true
     reserved: [ 0,0,0 ]
