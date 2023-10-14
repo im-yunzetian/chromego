@@ -30,14 +30,7 @@ proxy-groups:
   - name: 节点选择
     type: select
     proxies:
-      - 自动选择
       - DIRECT
-
-  - name: 自动选择
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
 
 rules:
   - GEOIP,LAN,DIRECT

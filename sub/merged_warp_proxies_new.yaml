@@ -298,11 +298,8 @@ proxy-groups:
 - name: 节点选择
   type: select
   proxies:
-  - 自动选择
-  - 负载均衡
-  - 手动选择
-  - WARP
   - DIRECT
+  - WARP
   - meta_hysteria2_01
   - meta_hysteria_11
   - meta_tuic_21
@@ -330,9 +327,6 @@ proxy-groups:
 - name: WARP前置节点
   type: select
   proxies:
-  - 自动选择
-  - 负载均衡
-  - 手动选择
   - meta_hysteria2_01
   - meta_hysteria_11
   - meta_tuic_21
@@ -357,43 +351,6 @@ proxy-groups:
   - hysteria2_1
   - hysteria2_2
   - hysteria2_3
-- name: 自动选择
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - meta_hysteria2_01
-  - meta_hysteria_11
-  - meta_tuic_21
-  - meta_hysteria2_31
-  - meta_hysteria_41
-  - meta_hysteria2_51
-  - meta_hysteria_61
-  - meta_hysteria_71
-  - meta_hysteria_81
-  - meta_hysteria_91
-  - meta_hysteria_101
-  - meta_hysteria_111
-  - meta_hysteria_121
-  - meta_hysteria_131
-  - meta_vless_141
-  - meta_hysteria_151
-  - hysteria_0
-  - hysteria_1
-  - hysteria_2
-  - hysteria_3
-  - hysteria2_0
-  - hysteria2_1
-  - hysteria2_2
-  - hysteria2_3
-- name: 手动选择
-  type: select
-- name: 负载均衡
-  type: load-balance
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  strategy: round-robin
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

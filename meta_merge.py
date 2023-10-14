@@ -219,14 +219,14 @@ def process_xray(data, index):
 
 def update_proxy_groups(config_data, merged_proxies):
     for group in config_data['proxy-groups']:
-        if group['name'] in ['节点选择','自动选择']:
+        if group['name'] in ['节点选择']:
             if 'proxies' not in group.keys():
                 group['proxies']=[]
             group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
 
 def update_warp_proxy_groups(config_warp_data, merged_proxies):
     for group in config_warp_data['proxy-groups']:
-        if group['name'] in ['节点选择','自动选择','WARP前置节点']:
+        if group['name'] in ['节点选择','WARP前置节点']:
             if 'proxies' not in group.keys():
                 group['proxies']=[]
             group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
@@ -262,7 +262,7 @@ if 'proxies' not in config_data.keys():
 config_data['proxies'].extend(merged_proxies)
 config_warp_data['proxies'].extend(merged_proxies)
 
-# 更新自动选择和节点选择的proxies的name部分
+# 更新节点选择的proxies的name部分
 update_proxy_groups(config_data, merged_proxies)
 update_warp_proxy_groups(config_warp_data, merged_proxies)
 
@@ -307,7 +307,7 @@ if 'proxies' not in config_data.keys():
 config_data['proxies'].extend(merged_proxies)
 config_warp_data['proxies'].extend(merged_proxies)
 
-# 更新自动选择和节点选择的proxies的name部分
+# 更新节点选择的proxies的name部分
 update_proxy_groups(config_data, merged_proxies)
 update_warp_proxy_groups(config_warp_data, merged_proxies)
 
