@@ -229,7 +229,7 @@ proxies:
   down: 10
 - name: meta_vless_141
   type: vless
-  server: 45.150.165.61
+  server: 45.150.165.79
   port: 25678
   udp: true
   uuid: 34f36b97-1fb7-41f3-8db4-912cc69e724a
@@ -334,9 +334,9 @@ proxies:
   skip-cert-verify: true
 - name: hysteria2_3
   type: hysteria2
-  server: www2.dtku49.xyz
-  port: 54406
-  password: ebcbb37b
+  server: www.dtku46.xyz
+  port: 43841
+  password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
   skip-cert-verify: true

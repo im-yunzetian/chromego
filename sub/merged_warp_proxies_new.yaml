@@ -27,8 +27,8 @@ dns:
 proxies:
 - name: WARP
   type: wireguard
-  server: 162.159.192.12
-  port: 500
+  server: engage.cloudflareclient.com
+  port: 2408
   ip: 172.16.0.2
   ipv6: 2606:4700:110:87c0:ba32:773a:8d44:e353
   private-key: +HpHpY/KjSv5hJdGrN2ok1A6CKhCmTQv5Unwyul9S1g=
@@ -183,7 +183,7 @@ proxies:
   down: 10
 - name: meta_vless_141
   type: vless
-  server: 45.150.165.61
+  server: 45.150.165.79
   port: 25678
   udp: true
   uuid: 34f36b97-1fb7-41f3-8db4-912cc69e724a
@@ -288,9 +288,9 @@ proxies:
   skip-cert-verify: true
 - name: hysteria2_3
   type: hysteria2
-  server: www2.dtku49.xyz
-  port: 54406
-  password: ebcbb37b
+  server: www.dtku46.xyz
+  port: 43841
+  password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
   skip-cert-verify: true
