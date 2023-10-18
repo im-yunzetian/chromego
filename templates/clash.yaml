@@ -1,32 +1,26 @@
-port: 7890
+mixed-port: 7890
 allow-lan: true
-mode: rule
+mode: Rule
 log-level: info
-unified-delay: true
-global-client-fingerprint: chrome
+external-controller: :9090
 dns:
-  enable: true
-  listen: :53
+  enabled: true
   ipv6: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  default-nameserver:
-    - 223.5.5.5
-    - 8.8.8.8
   nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+    - 119.29.29.29
+    - 223.5.5.5
   fallback:
-    - https://1.0.0.1/dns-query
-    - tls://dns.google
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
+    - 8.8.8.8
+    - 8.8.4.4
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
+proxies:
+  - {name: VLESS, type: vless, server: 443.cf.bestl.de, port: 2053, uuid: abe458e7-a8a5-433b-f55d-5f25f34b2c9d, tls: true, servername: www.yzt1314.shop, skip-cert-verify: false, network: ws, ws-opts: {path: /abe458e7-a8a5-433b-f55d-5f25f34b2c9d, headers: { Host: www.yzt1314.shop}}, udp: true}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
+    proxies:
+      - VLESS
   - name: 📲 电报消息
     type: select
     proxies:
