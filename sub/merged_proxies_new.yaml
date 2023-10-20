@@ -9900,7 +9900,7 @@ proxies:
 - name: hysteria2_3
   type: hysteria2
   server: www.dtku46.xyz
-  port: 43841
+  port: 60626
   password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
