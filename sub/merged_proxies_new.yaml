@@ -29,7 +29,7 @@ proxy-groups:
   type: select
   proxies:
   - meta_hysteria2_01
-  - meta_hysteria_11
+  - meta_hysteria2_11
   - meta_tuic_21
   - meta_hysteria2_31
   - meta_hysteria_41
@@ -9661,16 +9661,12 @@ proxies:
   password: dongtaiwang.com
   sni: www.bing.com
   skip-cert-verify: true
-- name: meta_hysteria_11
-  type: hysteria
-  server: www.dtku46.xyz
-  port: 11223
-  auth-str: mqoE9qSoyMFa
-  alpn:
-  - h3
-  protocol: udp
-  up: 50 Mbps
-  down: 100 Mbps
+- name: meta_hysteria2_11
+  type: hysteria2
+  server: www2.dtku49.xyz
+  port: 54406
+  password: ebcbb37b
+  sni: www.bing.com
   skip-cert-verify: true
 - name: meta_tuic_21
   server: tuic3.dtku47.xyz
