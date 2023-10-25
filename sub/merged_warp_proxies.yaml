@@ -103,18 +103,19 @@ proxies:
   protocol: udp
   up: 50 Mbps
   down: 100 Mbps
-- name: meta_hysteria_61
-  type: hysteria
-  server: 108.181.22.239
-  port: 17727
-  sni: youku.com
-  skip-cert-verify: true
+- name: meta_tuic_61
+  server: tuic4.dtku47.xyz
+  port: 12980
+  type: tuic
+  uuid: ea8be14e-f82a-43ae-90b2-e110a7c7e164
+  password: dongtaiwang.com
+  sni: tuic4.dtku47.xyz
   alpn:
   - h3
-  protocol: udp
-  auth_str: 7YxfKsXdTnB226S8j4OjaA9M0nLcXATvgnXhVJbCRG7e9KKU7i
-  up: 11
-  down: 55
+  request-timeout: 8000
+  udp-relay-mode: native
+  skip-cert-verify: false
+  congestion-controller: bbr
 - name: meta_hysteria_71
   type: hysteria
   server: www.dtku50.xyz
@@ -154,15 +155,15 @@ proxies:
   down: 55
 - name: hysteria_0
   type: hysteria
-  server: 167.160.91.115
-  port: 13928
-  ports: 13928
-  auth_str: BF0LL4L2jlqSdW3KxjQv81AiFFjj90vWRHeUoqUuTVPeDAGvq3
+  server: 108.181.22.239
+  port: 17727
+  ports: 17727
+  auth_str: 7YxfKsXdTnB226S8j4OjaA9M0nLcXATvgnXhVJbCRG7e9KKU7i
   up: 80
   down: 100
   fast-open: true
   protocol: udp
-  sni: paypal.com
+  sni: youku.com
   skip-cert-verify: true
   alpn:
   - h3
@@ -182,15 +183,15 @@ proxies:
   - h3
 - name: hysteria_2
   type: hysteria
-  server: 173.234.25.52
-  port: 20164
-  ports: 20164
-  auth_str: Ljg6NNEATDqP97hdAdHe1lJv7ggtKc0h7zmCCZKCX3qY0LR64F
+  server: 109.104.152.149
+  port: 48406
+  ports: 48406
+  auth_str: xfNhrunYJ9GvDXCTktY2bIwhc1EyeyyAbiUMx1UtBOWgI4cMVB
   up: 80
   down: 100
   fast-open: true
   protocol: udp
-  sni: www.microsoft.com
+  sni: www.amazon.cn
   skip-cert-verify: true
   alpn:
   - h3
@@ -208,6 +209,20 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
+- name: reality_3
+  type: vless
+  server: 109.104.152.156
+  port: 16717
+  uuid: a2971a3e-d013-47b2-93c8-2ff2a4bcff2a
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: aod.itunes.apple.com
+  reality-opts:
+    public-key: ydGuypY0EPIAxMpi8L-yhWBtjyavZbtwo9JJk2K5G0Y
+    short-id: 6ba85179e30d4fc2
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -219,7 +234,7 @@ proxy-groups:
   - meta_hysteria_31
   - meta_hysteria_41
   - meta_hysteria_51
-  - meta_hysteria_61
+  - meta_tuic_61
   - meta_hysteria_71
   - meta_vless_81
   - meta_hysteria_91
@@ -227,6 +242,7 @@ proxy-groups:
   - hysteria_1
   - hysteria_2
   - hysteria_3
+  - reality_3
 - name: WARP前置节点
   type: select
   proxies:
@@ -236,7 +252,7 @@ proxy-groups:
   - meta_hysteria_31
   - meta_hysteria_41
   - meta_hysteria_51
-  - meta_hysteria_61
+  - meta_tuic_61
   - meta_hysteria_71
   - meta_vless_81
   - meta_hysteria_91
@@ -244,6 +260,7 @@ proxy-groups:
   - hysteria_1
   - hysteria_2
   - hysteria_3
+  - reality_3
 - name: 📲 电报消息
   type: select
   proxies:

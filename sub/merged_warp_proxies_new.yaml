@@ -45,18 +45,22 @@ proxies:
   dialer-proxy: WARP前置节点
 - name: meta_hysteria2_01
   type: hysteria2
-  server: 108.181.22.205
-  port: 51443
-  password: dongtaiwang.com
+  server: 109.104.152.219
+  port: 59625
+  password: dc881814
   sni: www.bing.com
   skip-cert-verify: true
-- name: meta_hysteria2_11
-  type: hysteria2
-  server: www2.dtku49.xyz
-  port: 54406
-  password: ebcbb37b
-  sni: www.bing.com
-  skip-cert-verify: true
+- name: meta_tuic_11
+  server: tuic3.dtku47.xyz
+  port: 12255
+  type: tuic
+  uuid: ed6a538a-6e66-4f21-a769-4b389bb2f3ab
+  password: dongtaiwang
+  alpn:
+  - h3
+  request-timeout: 8000
+  udp-relay-mode: native
+  congestion-controller: bbr
 - name: meta_tuic_21
   server: tuic3.dtku47.xyz
   port: 12255
@@ -153,18 +157,19 @@ proxies:
   protocol: udp
   up: 50 Mbps
   down: 100 Mbps
-- name: meta_hysteria_121
-  type: hysteria
-  server: 108.181.22.239
-  port: 17727
-  sni: youku.com
-  skip-cert-verify: true
+- name: meta_tuic_121
+  server: tuic4.dtku47.xyz
+  port: 12980
+  type: tuic
+  uuid: ea8be14e-f82a-43ae-90b2-e110a7c7e164
+  password: dongtaiwang.com
+  sni: tuic4.dtku47.xyz
   alpn:
   - h3
-  protocol: udp
-  auth_str: 7YxfKsXdTnB226S8j4OjaA9M0nLcXATvgnXhVJbCRG7e9KKU7i
-  up: 11
-  down: 55
+  request-timeout: 8000
+  udp-relay-mode: native
+  skip-cert-verify: false
+  congestion-controller: bbr
 - name: meta_hysteria_131
   type: hysteria
   server: www.dtku50.xyz
@@ -204,15 +209,15 @@ proxies:
   down: 55
 - name: hysteria_0
   type: hysteria
-  server: 167.160.91.115
-  port: 13928
-  ports: 13928
-  auth_str: BF0LL4L2jlqSdW3KxjQv81AiFFjj90vWRHeUoqUuTVPeDAGvq3
+  server: 108.181.22.239
+  port: 17727
+  ports: 17727
+  auth_str: 7YxfKsXdTnB226S8j4OjaA9M0nLcXATvgnXhVJbCRG7e9KKU7i
   up: 80
   down: 100
   fast-open: true
   protocol: udp
-  sni: paypal.com
+  sni: youku.com
   skip-cert-verify: true
   alpn:
   - h3
@@ -232,15 +237,15 @@ proxies:
   - h3
 - name: hysteria_2
   type: hysteria
-  server: 173.234.25.52
-  port: 20164
-  ports: 20164
-  auth_str: Ljg6NNEATDqP97hdAdHe1lJv7ggtKc0h7zmCCZKCX3qY0LR64F
+  server: 109.104.152.149
+  port: 48406
+  ports: 48406
+  auth_str: xfNhrunYJ9GvDXCTktY2bIwhc1EyeyyAbiUMx1UtBOWgI4cMVB
   up: 80
   down: 100
   fast-open: true
   protocol: udp
-  sni: www.microsoft.com
+  sni: www.amazon.cn
   skip-cert-verify: true
   alpn:
   - h3
@@ -258,26 +263,18 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-- name: hysteria2_0
-  type: hysteria2
-  server: 108.181.22.155
-  port: 46728
-  password: dongtaiwang.com
-  fast-open: true
-  sni: www.bing.com
-  skip-cert-verify: true
 - name: hysteria2_1
   type: hysteria2
-  server: 167.160.90.252
-  port: 60930
-  password: fc4488ef
+  server: 108.181.22.155
+  port: 63400
+  password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
   skip-cert-verify: true
 - name: hysteria2_2
   type: hysteria2
   server: www.dtku48.xyz
-  port: 56411
+  port: 14847
   password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
@@ -290,13 +287,27 @@ proxies:
   fast-open: true
   sni: www.bing.com
   skip-cert-verify: true
+- name: reality_3
+  type: vless
+  server: 109.104.152.156
+  port: 16717
+  uuid: a2971a3e-d013-47b2-93c8-2ff2a4bcff2a
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: aod.itunes.apple.com
+  reality-opts:
+    public-key: ydGuypY0EPIAxMpi8L-yhWBtjyavZbtwo9JJk2K5G0Y
+    short-id: 6ba85179e30d4fc2
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - WARP
   - meta_hysteria2_01
-  - meta_hysteria2_11
+  - meta_tuic_11
   - meta_tuic_21
   - meta_hysteria2_31
   - meta_hysteria_41
@@ -307,7 +318,7 @@ proxy-groups:
   - meta_hysteria_91
   - meta_hysteria_101
   - meta_hysteria_111
-  - meta_hysteria_121
+  - meta_tuic_121
   - meta_hysteria_131
   - meta_vless_141
   - meta_hysteria_151
@@ -315,15 +326,15 @@ proxy-groups:
   - hysteria_1
   - hysteria_2
   - hysteria_3
-  - hysteria2_0
   - hysteria2_1
   - hysteria2_2
   - hysteria2_3
+  - reality_3
 - name: WARP前置节点
   type: select
   proxies:
   - meta_hysteria2_01
-  - meta_hysteria2_11
+  - meta_tuic_11
   - meta_tuic_21
   - meta_hysteria2_31
   - meta_hysteria_41
@@ -334,7 +345,7 @@ proxy-groups:
   - meta_hysteria_91
   - meta_hysteria_101
   - meta_hysteria_111
-  - meta_hysteria_121
+  - meta_tuic_121
   - meta_hysteria_131
   - meta_vless_141
   - meta_hysteria_151
@@ -342,10 +353,10 @@ proxy-groups:
   - hysteria_1
   - hysteria_2
   - hysteria_3
-  - hysteria2_0
   - hysteria2_1
   - hysteria2_2
   - hysteria2_3
+  - reality_3
 - name: 📲 电报消息
   type: select
   proxies:
