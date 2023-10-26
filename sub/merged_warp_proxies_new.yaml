@@ -51,15 +51,17 @@ proxies:
   sni: www.bing.com
   skip-cert-verify: true
 - name: meta_tuic_11
-  server: tuic3.dtku47.xyz
-  port: 12255
+  server: tuic1.freeh1.xyz
+  port: 40981
   type: tuic
-  uuid: ed6a538a-6e66-4f21-a769-4b389bb2f3ab
+  uuid: c2faac69-e1c1-4bf5-b8a8-d2ce4d834a66
   password: dongtaiwang
+  sni: tuic1.freeh1.xyz
   alpn:
   - h3
   request-timeout: 8000
   udp-relay-mode: native
+  skip-cert-verify: false
   congestion-controller: bbr
 - name: meta_tuic_21
   server: tuic3.dtku47.xyz
@@ -72,13 +74,19 @@ proxies:
   request-timeout: 8000
   udp-relay-mode: native
   congestion-controller: bbr
-- name: meta_hysteria2_31
-  type: hysteria2
+- name: meta_tuic_31
   server: 108.181.24.7
-  port: 30682
-  password: dongtaiwang.com
-  sni: www.bing.com
+  port: 23450
+  type: tuic
+  uuid: 3618921b-adeb-4bd3-a2a0-f98b72a674b1
+  password: dongtaiwang
+  sni: bing.com
+  alpn:
+  - h3
+  request-timeout: 8000
+  udp-relay-mode: native
   skip-cert-verify: true
+  congestion-controller: bbr
 - name: meta_hysteria_41
   type: hysteria
   server: www.dtku46.xyz
@@ -90,13 +98,19 @@ proxies:
   up: 50 Mbps
   down: 100 Mbps
   skip-cert-verify: true
-- name: meta_hysteria2_51
-  type: hysteria2
-  server: 108.181.24.7
-  port: 30682
-  password: dongtaiwang.com
-  sni: www.bing.com
+- name: meta_tuic_51
+  server: 108.181.22.205
+  port: 50987
+  type: tuic
+  uuid: d6214437-e1b5-4334-9090-8f66b78bea89
+  password: dongtaiwang
+  sni: bing.com
+  alpn:
+  - h3
+  request-timeout: 8000
+  udp-relay-mode: native
   skip-cert-verify: true
+  congestion-controller: bbr
 - name: meta_hysteria_61
   type: hysteria
   server: hy2.dtku47.xyz
@@ -184,7 +198,7 @@ proxies:
   down: 10
 - name: meta_vless_141
   type: vless
-  server: 45.150.165.79
+  server: 45.150.165.87
   port: 25678
   udp: true
   uuid: 34f36b97-1fb7-41f3-8db4-912cc69e724a
@@ -266,7 +280,7 @@ proxies:
 - name: hysteria2_1
   type: hysteria2
   server: 108.181.22.155
-  port: 63400
+  port: 56091
   password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
@@ -309,9 +323,9 @@ proxy-groups:
   - meta_hysteria2_01
   - meta_tuic_11
   - meta_tuic_21
-  - meta_hysteria2_31
+  - meta_tuic_31
   - meta_hysteria_41
-  - meta_hysteria2_51
+  - meta_tuic_51
   - meta_hysteria_61
   - meta_hysteria_71
   - meta_hysteria_81
@@ -336,9 +350,9 @@ proxy-groups:
   - meta_hysteria2_01
   - meta_tuic_11
   - meta_tuic_21
-  - meta_hysteria2_31
+  - meta_tuic_31
   - meta_hysteria_41
-  - meta_hysteria2_51
+  - meta_tuic_51
   - meta_hysteria_61
   - meta_hysteria_71
   - meta_hysteria_81
