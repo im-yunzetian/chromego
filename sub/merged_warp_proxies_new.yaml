@@ -280,7 +280,7 @@ proxies:
 - name: hysteria2_0
   type: hysteria2
   server: www.dtku48.xyz
-  port: 35814
+  port: 4802
   password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
@@ -304,7 +304,7 @@ proxies:
 - name: hysteria2_3
   type: hysteria2
   server: www.dtku46.xyz
-  port: 60626
+  port: 13579
   password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
