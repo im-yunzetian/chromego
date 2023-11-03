@@ -104,17 +104,17 @@ proxies:
   up: 50 Mbps
   down: 100 Mbps
 - name: meta_tuic_61
-  server: tuic4.dtku47.xyz
-  port: 12980
+  server: www2.dtku49.xyz
+  port: 19881
   type: tuic
-  uuid: ea8be14e-f82a-43ae-90b2-e110a7c7e164
-  password: dongtaiwang.com
-  sni: tuic4.dtku47.xyz
+  uuid: 45e2b23a-1a49-49c4-9422-8d786887ef3d
+  password: 51UMpwpdw0Kw
+  sni: bing.com
   alpn:
   - h3
   request-timeout: 8000
   udp-relay-mode: native
-  skip-cert-verify: false
+  skip-cert-verify: true
   congestion-controller: bbr
 - name: meta_hysteria_71
   type: hysteria
@@ -130,16 +130,17 @@ proxies:
   down: 10
 - name: meta_vless_81
   type: vless
-  server: 45.150.165.87
-  port: 25678
+  server: 45.150.165.121
+  port: 10306
   udp: true
-  uuid: 34f36b97-1fb7-41f3-8db4-912cc69e724a
+  uuid: 89a3befc-045b-4287-8b9f-f51c455f93be
   tls: true
-  servername: itunes.apple.com
+  servername: mensura.cdn-apple.com
   flow: xtls-rprx-vision
   network: tcp
   reality-opts:
-    public-key: sJsSZcA2DyAHDTcoe8Utbz9JaXJPMVmtHmiXxWmcExc
+    public-key: ec05-gX8GbyAZaJ72G4AWIadOsDk2_sZCDliuHZnwBc
+    short-id: 6ba85179e30d4fc2
   client-fingerprint: chrome
 - name: meta_hysteria_91
   type: hysteria
@@ -156,14 +157,14 @@ proxies:
 - name: hysteria_0
   type: hysteria
   server: 108.181.22.239
-  port: 17727
-  ports: 17727
-  auth_str: 7YxfKsXdTnB226S8j4OjaA9M0nLcXATvgnXhVJbCRG7e9KKU7i
+  port: 61561
+  ports: 61561
+  auth_str: PBhG3zqMKaMO5ZnemDvLrZ6v0Fd7EqCutDvzLNtvWHJ6IpMWJg
   up: 80
   down: 100
   fast-open: true
   protocol: udp
-  sni: youku.com
+  sni: bing.com
   skip-cert-verify: true
   alpn:
   - h3
