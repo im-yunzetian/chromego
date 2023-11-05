@@ -188,45 +188,42 @@ proxies:
   protocol: udp
   up: 50 Mbps
   down: 100 Mbps
-- name: meta_tuic_121
-  server: www2.dtku49.xyz
-  port: 19881
-  type: tuic
-  uuid: 45e2b23a-1a49-49c4-9422-8d786887ef3d
-  password: 51UMpwpdw0Kw
-  sni: bing.com
-  alpn:
-  - h3
-  request-timeout: 8000
-  udp-relay-mode: native
-  skip-cert-verify: true
-  congestion-controller: bbr
-- name: meta_hysteria_131
+- name: meta_hysteria_121
   type: hysteria
-  server: www.dtku50.xyz
-  port: 43250
-  sni: bing.com
+  server: www2.dtku49.xyz
+  port: 37363
+  sni: www.microsoft.com
   skip-cert-verify: true
   alpn:
   - h3
   protocol: udp
-  auth_str: 2S9M5Gs0pgRsaTObNghoLZx6wPkBJOGTFWvf4R06Us5hUNtfr7
+  auth_str: n8Paxd1Uad5wisPoT6i43lrerK1O5iQRfHnbI3RRsIrbdkyLZP
+  up: 4
+  down: 20
+- name: meta_hysteria_131
+  type: hysteria
+  server: www.dtku50.xyz
+  port: 14751
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  protocol: udp
+  auth_str: 6qSZyyl4eTT8hqPMQxdhIgpxQfTyW1Oq6GBwQVhA2vBOw7QIGY
   up: 2
   down: 10
-- name: meta_vless_141
-  type: vless
-  server: 45.150.165.121
-  port: 10306
-  udp: true
-  uuid: 89a3befc-045b-4287-8b9f-f51c455f93be
-  tls: true
-  servername: mensura.cdn-apple.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: ec05-gX8GbyAZaJ72G4AWIadOsDk2_sZCDliuHZnwBc
-    short-id: 6ba85179e30d4fc2
-  client-fingerprint: chrome
+- name: meta_hysteria_141
+  type: hysteria
+  server: 62.204.54.81
+  port: 37899
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  protocol: udp
+  auth_str: OdHFS3zC3HlSYJmc0GLQNKLAlwDbJqEmonVBXmI07T0Ojb1bQB
+  up: 10
+  down: 50
 - name: meta_hysteria_151
   type: hysteria
   server: www3.dtku49.xyz
@@ -359,9 +356,9 @@ proxy-groups:
   - meta_hysteria_91
   - meta_hysteria_101
   - meta_hysteria_111
-  - meta_tuic_121
+  - meta_hysteria_121
   - meta_hysteria_131
-  - meta_vless_141
+  - meta_hysteria_141
   - meta_hysteria_151
   - hysteria_0
   - hysteria_1
@@ -388,9 +385,9 @@ proxy-groups:
   - meta_hysteria_91
   - meta_hysteria_101
   - meta_hysteria_111
-  - meta_tuic_121
+  - meta_hysteria_121
   - meta_hysteria_131
-  - meta_vless_141
+  - meta_hysteria_141
   - meta_hysteria_151
   - hysteria_0
   - hysteria_1
