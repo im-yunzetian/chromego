@@ -1,9 +1,9 @@
 import base64
 import json
-import urllib.request
-import yaml
-import codecs
 import logging
+import urllib.request
+
+import yaml
 
 
 # 提取节点
@@ -57,14 +57,14 @@ def process_clash(data, index):
                 security = 'reality'
             else:
                 security = 'tls'
-            vless_meta = f"vless://{uuid}@{server}:{port}?security={security}&allowInsecure{insecure}&flow={flow}&type={network}&fp={fp}&pbk={publicKey}&sid={short_id}&sni={sni}&serviceName={grpc_serviceName}&path={ws_path}&host={ws_headers_host}#vless_meta_{index}"
-            proxy_ = f"vless://{uuid}@{server}:{port}?security={security}&allowInsecure{insecure}&flow={flow}&type={network}&fp={fp}&pbk={publicKey}&sid={short_id}&sni={sni}&serviceName={grpc_serviceName}&path={ws_path}&host={ws_headers_host}"
 
-            if proxy_ in merged_proxies_:
-                print(proxy_, '已存在')
+            proxy = f"vless://{uuid}@{server}:{port}?security={security}&allowInsecure{insecure}&flow={flow}&type={network}&fp={fp}&pbk={publicKey}&sid={short_id}&sni={sni}&serviceName={grpc_serviceName}&path={ws_path}&host={ws_headers_host}"
+
+            if proxy in merged_proxies:
+                print(proxy, '已存在')
             else:
-                merged_proxies_.append(proxy_)
-                merged_proxies.append(vless_meta)
+                merged_proxies.append(proxy)
+                merged_proxies.sort()
 
         if proxy['type'] == 'vmess':
             server = proxy.get("server", "")
@@ -82,14 +82,13 @@ def process_clash(data, index):
             ws_path = proxy.get('ws-opts', {}).get('path', '')
             ws_headers_host = proxy.get('ws-opts', {}).get('headers', {}).get('Host', '')
 
-            vmess_meta = f"vmess://{uuid}@{server}:{port}?security={security}&allowInsecure{insecure}&type={network}&fp={fp}&sni={sni}&path={ws_path}&host={ws_headers_host}#vmess_meta_{index}"
-            proxy_ = f"vmess://{uuid}@{server}:{port}?security={security}&allowInsecure{insecure}&type={network}&fp={fp}&sni={sni}&path={ws_path}&host={ws_headers_host}"
+            proxy = f"vmess://{uuid}@{server}:{port}?security={security}&allowInsecure{insecure}&type={network}&fp={fp}&sni={sni}&path={ws_path}&host={ws_headers_host}"
 
-            if proxy_ in merged_proxies_:
-                print(proxy_, '已存在')
+            if proxy in merged_proxies:
+                print(proxy, '已存在')
             else:
-                merged_proxies_.append(proxy_)
-                merged_proxies.append(vmess_meta)
+                merged_proxies.append(proxy)
+                merged_proxies.sort()
 
         elif proxy['type'] == 'tuic':
             server = proxy.get("server", "")
@@ -102,14 +101,14 @@ def process_clash(data, index):
             congestion = proxy.get("congestion-controller", "bbr")
             alpn = proxy.get("alpn", [])[0] if proxy.get("alpn") and len(proxy["alpn"]) > 0 else None
             # tuic_meta_neko = f"tuic://{server}:{port}?uuid={uuid}&version=5&password={password}&insecure={insecure}&alpn={alpn}&mode={udp_relay_mode}"
-            tuic_meta = f"tuic://{uuid}:{password}@{server}:{port}?sni={sni}&congestion_control={congestion}&udp_relay_mode={udp_relay_mode}&alpn={alpn}&allow_insecure={insecure}#tuic_meta_{index}"
-            proxy_ = f"tuic://{uuid}:{password}@{server}:{port}?sni={sni}&congestion_control={congestion}&udp_relay_mode={udp_relay_mode}&alpn={alpn}&allow_insecure={insecure}"
 
-            if proxy_ in merged_proxies_:
-                print(proxy_, '已存在')
+            proxy = f"tuic://{uuid}:{password}@{server}:{port}?sni={sni}&congestion_control={congestion}&udp_relay_mode={udp_relay_mode}&alpn={alpn}&allow_insecure={insecure}"
+
+            if proxy in merged_proxies:
+                print(proxy, '已存在')
             else:
-                merged_proxies_.append(proxy_)
-                merged_proxies.append(tuic_meta)
+                merged_proxies.append(proxy)
+                merged_proxies.sort()
 
         elif proxy['type'] == "hysteria2":
             server = proxy.get("server", "")
@@ -119,14 +118,14 @@ def process_clash(data, index):
             obfs_password = proxy.get("obfs-password", "")
             sni = proxy.get("sni", "")
             insecure = int(proxy.get("skip-cert-verify", 0))
-            hy2_meta = f"hysteria2://{auth}@{server}:{port}?insecure={insecure}&sni={sni}&obfs={obfs}&obfs-password={obfs_password}#hysteria2_meta_{index}"
-            proxy_ = f"hysteria2://{auth}@{server}:{port}?insecure={insecure}&sni={sni}&obfs={obfs}&obfs-password={obfs_password}"
 
-            if proxy_ in merged_proxies_:
-                print(proxy_, '已存在')
+            proxy = f"hysteria2://{auth}@{server}:{port}?insecure={insecure}&sni={sni}&obfs={obfs}&obfs-password={obfs_password}"
+
+            if proxy in merged_proxies:
+                print(proxy, '已存在')
             else:
-                merged_proxies_.append(proxy_)
-                merged_proxies.append(hy2_meta)
+                merged_proxies.append(proxy)
+                merged_proxies.sort()
 
         elif proxy['type'] == 'hysteria':
             server = proxy.get("server", "")
@@ -142,14 +141,14 @@ def process_clash(data, index):
             fast_open = int(proxy.get("fast_open", 1))
             auth = proxy.get("auth-str", "")
             # 生成URL
-            hysteria_meta = f"hysteria://{server}:{port}?peer={sni}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&mport={ports}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}#hysteria_meta_{index}"
-            proxy_ = f"hysteria://{server}:{port}?peer={sni}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&mport={ports}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}"
 
-            if proxy_ in merged_proxies_:
-                print(proxy_, '已存在')
+            proxy = f"hysteria://{server}:{port}?peer={sni}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&mport={ports}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}"
+
+            if proxy in merged_proxies:
+                print(proxy, '已存在')
             else:
-                merged_proxies_.append(proxy_)
-                merged_proxies.append(hysteria_meta)
+                merged_proxies.append(proxy)
+                merged_proxies.sort()
 
 
 def process_naive(data, index):
@@ -157,10 +156,15 @@ def process_naive(data, index):
         json_data = json.loads(data)
 
         proxy_str = json_data["proxy"]
-        # proxy_str = proxy_str.replace("https://", "")
-        # naiveproxy = base64.b64encode(proxy_str.encode()).decode()
-        naiveproxy = proxy_str
-        merged_proxies.append(naiveproxy)
+        proxy_str = proxy_str.replace("https://", "")
+        naiveproxy = base64.b64encode(proxy_str.encode()).decode()
+        proxy = "https://" + naiveproxy
+
+        if proxy in merged_proxies:
+            print(proxy, '已存在')
+        else:
+            merged_proxies.append(proxy)
+            merged_proxies.sort()
 
     except Exception as e:
         logging.error(f"Error processing naive data for index {index}: {e}")
@@ -181,10 +185,14 @@ def process_sb(data, index):
 
         ss = f"{method}:{password}@{server}:{server_port}"
         shadowtls = f'{{"version": "{version}", "host": "{host}","password":{shadowtls_password}}}'
-        shadowtls_proxy = "ss://" + base64.b64encode(ss.encode()).decode() + "?shadow-tls=" + base64.b64encode(
-            shadowtls.encode()).decode() + f"#shadowtls{index}"
+        proxy = "ss://" + base64.b64encode(ss.encode()).decode() + "?shadow-tls=" + base64.b64encode(
+            shadowtls.encode()).decode()
 
-        merged_proxies.append(shadowtls_proxy)
+        if proxy in merged_proxies:
+            print(proxy, '已存在')
+        else:
+            merged_proxies.append(proxy)
+            merged_proxies.sort()
 
     except Exception as e:
         logging.error(f"Error processing shadowtls data for index {index}: {e}")
@@ -207,14 +215,14 @@ def process_hysteria(data, index):
         fast_open = int(json_data.get("fast_open", 0))
         auth = json_data.get("auth_str", "")
         # 生成URL
-        hysteria = f"hysteria://{server}?peer={server_name}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}#hysteria_{index}"
-        proxy_ = f"hysteria://{server}?peer={server_name}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}"
 
-        if proxy_ in merged_proxies_:
-            print(proxy_, '已存在')
+        proxy = f"hysteria://{server}?peer={server_name}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}"
+
+        if proxy in merged_proxies:
+            print(proxy, '已存在')
         else:
-            merged_proxies_.append(proxy_)
-            merged_proxies.append(hysteria)
+            merged_proxies.append(proxy)
+            merged_proxies.sort()
 
 
     except Exception as e:
@@ -232,14 +240,13 @@ def process_hysteria2(data, index):
         sni = json_data["tls"]["sni"]
         auth = json_data["auth"]
         # 生成URL
-        hysteria2 = f"hysteria2://{auth}@{server}?insecure={insecure}&sni={sni}#hysteria2_{index}"
-        proxy_ = f"hysteria2://{auth}@{server}?insecure={insecure}&sni={sni}"
+        proxy = f"hysteria2://{auth}@{server}?insecure={insecure}&sni={sni}"
 
-        if proxy_ in merged_proxies_:
-            print(proxy_, '已存在')
+        if proxy in merged_proxies:
+            print(proxy, '已存在')
         else:
-            merged_proxies_.append(proxy_)
-            merged_proxies.append(hysteria2)
+            merged_proxies.append(proxy)
+            merged_proxies.sort()
     except Exception as e:
         logging.error(f"Error processing hysteria2 data for index {index}: {e}")
 
@@ -256,7 +263,7 @@ def process_xray(data, index):
 
             if vnext:
                 server = vnext[0].get("address", "")
-                port = vnext[0].get("port", "")
+                port = int(vnext[0].get("port", 0))
                 users = vnext[0]["users"]
 
                 if users:
@@ -279,7 +286,7 @@ def process_xray(data, index):
 
             fp = reality_settings.get("fingerprint", "")
             fp = tls_settings.get("fingerprint", fp)
-            spx = reality_settings.get("spiderX", "")
+            # spx = reality_settings.get("spiderX", "")
 
             grpc_settings = stream_settings.get("grpcSettings", {})
             grpc_serviceName = grpc_settings.get("serviceName", "")
@@ -288,15 +295,13 @@ def process_xray(data, index):
             ws_path = ws_settings.get("path", "")
             ws_headers_host = ws_settings.get("headers", {}).get("Host", "")
 
-            xray_proxy = f"vless://{uuid}@{server}:{port}?security={security}&allowInsecure={insecure}&flow={flow}&type={network}&fp={fp}&pbk={publicKey}&sid={short_id}&sni={sni}&serviceName={grpc_serviceName}&path={ws_path}&host={ws_headers_host}#vless_{index}"
-            proxy_ = f"vless://{uuid}@{server}:{port}?security={security}&allowInsecure={insecure}&flow={flow}&type={network}&fp={fp}&pbk={publicKey}&sid={short_id}&sni={sni}&serviceName={grpc_serviceName}&path={ws_path}&host={ws_headers_host}"
+            proxy = f"vless://{uuid}@{server}:{port}?security={security}&allowInsecure={insecure}&flow={flow}&type={network}&fp={fp}&pbk={publicKey}&sid={short_id}&sni={sni}&serviceName={grpc_serviceName}&path={ws_path}&host={ws_headers_host}"
 
-            if proxy_ in merged_proxies_:
-                print(proxy_, '已存在')
+            if proxy in merged_proxies:
+                print(proxy, '已存在')
             else:
-                merged_proxies_.append(proxy_)
-                # 将当前proxy字典添加到所有proxies列表中
-                merged_proxies.append(xray_proxy)
+                merged_proxies.append(proxy)
+                merged_proxies.sort()
         # 不支持插件
         if protocol == "shadowsocks":
             server = json_data["outbounds"][0]["settings"]["servers"]["address"]
@@ -306,20 +311,19 @@ def process_xray(data, index):
             # 生成URL
             ss_source = f"{method}:{password}@{server}:{port}"
             ss_source = base64.b64encode(ss_source.encode()).decode()
-            xray_proxy = f"ss://{ss_source}"
+            proxy = f"ss://{ss_source}"
 
-            if xray_proxy in merged_proxies_:
-                print(xray_proxy, '已存在')
+            if proxy in merged_proxies:
+                print(proxy, '已存在')
             else:
-                merged_proxies_.append(xray_proxy)
-                # 将当前proxy字典添加到所有proxies列表中
-                merged_proxies.append(xray_proxy)
+                merged_proxies.append(proxy)
+                merged_proxies.sort()
     except Exception as e:
         logging.error(f"Error processing xray data for index {index}: {e}")
 
+
 # 定义一个空列表用于存储合并后的代理配置
 merged_proxies = []
-merged_proxies_ = []
 
 # 处理 clash URLs
 process_urls('./urls/clash_new_urls.txt', process_clash)
