@@ -255,11 +255,12 @@ def process_hysteria2(data, index):
 def process_xray(data, index):
     try:
         json_data = json.loads(data)
+        outbounds = json_data["outbounds"][0]
         # 处理 xray 数据
-        protocol = json_data["outbounds"][0].get("protocol")
+        protocol = outbounds.get("protocol")
 
         if protocol == "vless":
-            vnext = json_data["outbounds"][0]["settings"]["vnext"]
+            vnext = outbounds["settings"]["vnext"]
 
             if vnext:
                 server = vnext[0].get("address", "")
@@ -271,7 +272,7 @@ def process_xray(data, index):
                     uuid = user.get("id", "")
                     flow = user.get("flow", "")
 
-            stream_settings = json_data["outbounds"][0].get("streamSettings", {})
+            stream_settings = outbounds.get("streamSettings", {})
             network = stream_settings.get("network", "")
             security = stream_settings.get("security", "")
             reality_settings = stream_settings.get("realitySettings", {})
@@ -304,10 +305,11 @@ def process_xray(data, index):
                 merged_proxies.sort()
         # 不支持插件
         if protocol == "shadowsocks":
-            server = json_data["outbounds"][0]["settings"]["servers"]["address"]
-            method = json_data["outbounds"][0]["settings"]["servers"]["method"]
-            password = json_data["outbounds"][0]["settings"]["servers"]["password"]
-            port = json_data["outbounds"][0]["settings"]["servers"]["port"]
+            servers = outbounds['settings']['servers'][0]
+            server = servers['address']
+            method = servers['method']
+            password = servers['password']
+            port = servers['port']
             # 生成URL
             ss_source = f"{method}:{password}@{server}:{port}"
             ss_source = base64.b64encode(ss_source.encode()).decode()
@@ -318,8 +320,8 @@ def process_xray(data, index):
             else:
                 merged_proxies.append(proxy)
                 merged_proxies.sort()
-    except Exception as e:
-        logging.error(f"Error processing xray data for index {index}: {e}")
+    except Exception as err:
+        logging.error(f"Error processing xray data for index {index}: {err},{err.__traceback__.tb_lineno}")
 
 
 # 定义一个空列表用于存储合并后的代理配置
