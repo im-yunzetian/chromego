@@ -6,6 +6,7 @@ hysteria2://dongtaiwang.com@www.dtku46.xyz:49730?insecure=1&sni=www.bing.com
 hysteria2://dongtaiwang.com@www.dtku48.xyz:19244?insecure=1&sni=www.bing.com
 hysteria://109.104.152.149:48406?peer=www.amazon.cn&auth=xfNhrunYJ9GvDXCTktY2bIwhc1EyeyyAbiUMx1UtBOWgI4cMVB&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=&protocol=udp&fastopen=1
 hysteria://109.104.152.180:64502?peer=bing.com&auth=kxeFKpB8fhGjP7cO7NNgXYr19ZsqKQMco612ZCfXiaJrojw571&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=&protocol=udp&fastopen=1
+hysteria://167.160.90.251:48089?peer=&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=48089&obfs=&protocol=udp&fastopen=1
 hysteria://173.234.25.52:20164?peer=www.microsoft.com&auth=Ljg6NNEATDqP97hdAdHe1lJv7ggtKc0h7zmCCZKCX3qY0LR64F&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=&protocol=udp&fastopen=1
 hysteria://51.158.54.46:11926?peer=youku.com&auth=Trz2alKwzCImRAXI3nXfpo1ylpHfqOL8s1vageWKoyjjvWeMVs&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=&protocol=udp&fastopen=1
 hysteria://62.204.54.81:37899?peer=www.microsoft.com&auth=&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=37899&obfs=&protocol=udp&fastopen=1
