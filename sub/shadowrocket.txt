@@ -2,7 +2,6 @@ https://ZG9uZ3RhaXdhbmcuY29tOmRvbmd0YWl3YW5nLmNvbUBuYWl2ZTE0LmNmY2RuMy54eXo6NDQz
 https://ZG9uZ3RhaXdhbmcuY29tOmRvbmd0YWl3YW5nLmNvbUBuYWl2ZTE4LmNmY2RuMy54eXo6NDQz
 hysteria2://dongtaiwang.com@108.181.22.155:40246?insecure=1&sni=www.bing.com
 hysteria2://dongtaiwang.com@167.160.90.252:63530?insecure=1&sni=www.bing.com
-hysteria2://dongtaiwang.com@45.145.72.212:23520?insecure=1&sni=bing.com&obfs=&obfs-password=
 hysteria2://dongtaiwang.com@www.dtku46.xyz:18417?insecure=1&sni=www.bing.com
 hysteria://104.234.70.41:57153?peer=&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=57153&obfs=&protocol=udp&fastopen=1
 hysteria://104.234.70.6:16117?peer=&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=16117&obfs=&protocol=udp&fastopen=1
@@ -22,6 +21,6 @@ hysteria://www.dtku46.xyz:11223?peer=&auth=mqoE9qSoyMFa&insecure=1&upmbps=50&dow
 hysteria://www.dtku50.xyz:23577?peer=www.amazon.cn&auth=&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=23577&obfs=&protocol=udp&fastopen=1
 tuic://764b539f-2d3c-4772-9731-5ebf6984af98:dongtaiwang.com@64.110.25.10:11227?sni=bing.com&congestion_control=bbr&udp_relay_mode=native&alpn=h3&allow_insecure=1
 vless://3cf5352c-ba83-40d2-a661-df6affa019eb@dongtaiwang2.com:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=yhc1.freeh1.xyz&serviceName=&path=/kdnhws&host=yhc1.freeh1.xyz
-vless://3cf5352c-ba83-40d2-a661-df6affa019eb@dongtaiwang3.com:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=yhc1.freeh1.xyz&serviceName=&path=/kdnhws&host=yhc1.freeh1.xyz
 vless://f5c180eb-fbce-49ac-9029-482eca9385c0@cloudflare.cfgo.cc:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=xray1.freeh1.xyz&serviceName=&path=/gzogws&host=xray1.freeh1.xyz
 vless://f5c180eb-fbce-49ac-9029-482eca9385c0@www.baota.me:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=xray1.freeh1.xyz&serviceName=&path=/gzogws&host=xray1.freeh1.xyz
+vless://ffb15cd2-0521-49de-b8aa-fb15d58c8075@dongtaiwang3.com:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=v2ray3.freegradely.xyz&serviceName=&path=/bqbows&host=v2ray3.freegradely.xyz
