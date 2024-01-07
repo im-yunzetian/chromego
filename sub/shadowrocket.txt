@@ -4,7 +4,7 @@ hysteria2://dongtaiwang.com@108.181.22.155:27710?insecure=1&sni=www.bing.com
 hysteria2://dongtaiwang.com@167.160.90.252:63530?insecure=1&sni=www.bing.com
 hysteria2://dongtaiwang.com@www.dtku46.xyz:55307?insecure=1&sni=www.bing.com
 hysteria://104.234.70.41:57153?peer=&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=57153&obfs=&protocol=udp&fastopen=1
-hysteria://104.234.70.6:16117?peer=&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=16117&obfs=&protocol=udp&fastopen=1
+hysteria://104.234.70.6:11330?peer=&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=11330&obfs=&protocol=udp&fastopen=1
 hysteria://108.181.22.155:19721?peer=&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=19721&obfs=&protocol=udp&fastopen=1
 hysteria://108.181.22.213:52284?peer=&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=52284&obfs=&protocol=udp&fastopen=1
 hysteria://108.181.22.239:39967?peer=bing.com&auth=dongtaiwang.com&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=&protocol=udp&fastopen=1
