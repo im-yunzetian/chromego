@@ -14,9 +14,10 @@ hysteria://hy1.dtku47.xyz:22334?peer=&auth=lASdKzWK0VxL&insecure=0&upmbps=50&dow
 hysteria://hy2.dtku47.xyz:15566?peer=&auth=jQrGpwSqp34P&insecure=0&upmbps=50&downmbps=80&alpn=h3&mport=15566&obfs=&protocol=udp&fastopen=1
 hysteria://www.dtku50.xyz:32408?peer=www.amazon.cn&auth=&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=32408&obfs=&protocol=udp&fastopen=1
 hysteria://www2.dtku48.xyz:22334?peer=&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=22334&obfs=&protocol=udp&fastopen=1
-vless://0773256c-d020-436d-afea-6eee7cb6c872@cu.dongtaiwang3.com:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=xray1.freegradely.xyz&serviceName=&path=/bodhws&host=xray1.freegradely.xyz
+vless://0773256c-d020-436d-afea-6eee7cb6c872@172.67.71.81:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=xray1.freegradely.xyz&serviceName=&path=/bodhws&host=xray1.freegradely.xyz
 vless://0773256c-d020-436d-afea-6eee7cb6c872@dongtaiwang2.com:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=xray1.freegradely.xyz&serviceName=&path=/bodhws&host=xray1.freegradely.xyz
-vless://7b671cd2-233d-406c-88da-1c687727dc52@cu.dongtaiwang3.com:443?security=tls&allowInsecure0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=fr.freeh1.xyz&serviceName=&path=/kfhaws&host=
-vless://7b671cd2-233d-406c-88da-1c687727dc52@dongtaiwang3.com:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=fr.freeh1.xyz&serviceName=&path=/kfhaws&host=fr.freeh1.xyz
-vless://a9202ced-3185-489c-8b28-74e9a00d894d@dongtaiwang3.com:443?security=tls&allowInsecure0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=dongtaiwang.dtku47.xyz&serviceName=&path=/eobjws&host=
-vless://ffb15cd2-0521-49de-b8aa-fb15d58c8075@cu.dongtaiwang3.com:443?security=tls&allowInsecure0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=v2ray3.freegradely.xyz&serviceName=&path=/bqbows&host=
+vless://7b671cd2-233d-406c-88da-1c687727dc52@23.227.39.53:443?security=tls&allowInsecure0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=fr.freeh1.xyz&serviceName=&path=/kfhaws&host=
+vless://7b671cd2-233d-406c-88da-1c687727dc52@23.227.39.53:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=fr.freeh1.xyz&serviceName=&path=/kfhaws&host=fr.freeh1.xyz
+vless://a9202ced-3185-489c-8b28-74e9a00d894d@172.67.70.101:443?security=tls&allowInsecure0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=dongtaiwang.dtku47.xyz&serviceName=&path=/eobjws&host=
+vless://a9202ced-3185-489c-8b28-74e9a00d894d@23.227.38.51:443?security=tls&allowInsecure0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=dongtaiwang.dtku47.xyz&serviceName=&path=/eobjws&host=
+vless://ffb15cd2-0521-49de-b8aa-fb15d58c8075@198.41.220.101:443?security=tls&allowInsecure0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=v2ray3.freegradely.xyz&serviceName=&path=/bqbows&host=
