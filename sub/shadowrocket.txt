@@ -14,6 +14,6 @@ hysteria://www.dtku40.xyz:18490?peer=bing.com&auth=dongtaiwang.com&insecure=1&up
 hysteria://www.dtku50.xyz:18470?peer=www.amazon.cn&auth=&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=18470&obfs=&protocol=udp&fastopen=1
 hysteria://www2.dtku48.xyz:22334?peer=&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=22334&obfs=&protocol=udp&fastopen=1
 ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206b2F0cys3dmRhU09iNE5zeFd3Q0JRbGw0cVR3UHUvZGhwZWdpSUducWQ5Yz1Ad3d3LmR0a3U0NC54eXo6MjIzMzU=
-vless://34d7aac1-fac7-4e17-b41e-5be028d286cd@45.145.72.212:11223?security=reality&allowInsecure0&flow=xtls-rprx-vision&type=tcp&fp=chrome&pbk=u24pYS0RqtYk8NBqtg4NIHUZIA0HmwuYw2RBIyt0T0c&sid=&sni=addons.mozilla.org&serviceName=&path=&host=
-vless://e659661d-8439-46e0-b1ab-d75ceaf73404@62.210.101.0:18700?security=reality&allowInsecure=0&flow=xtls-rprx-vision&type=tcp&fp=chrome&pbk=PBRc2v9SSXpG4jjQRYNa-kgs8w9V4U3MNLuncd2d0hw&sid=6ba85179e30d4fc2&sni=update.microsoft&serviceName=&path=&host=
+vless://ebfdccb6-7416-4b6e-860d-98587344d500@fbi.gov:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=lg1.freessr2.xyz&serviceName=&path=/xyakws&host=lg1.freessr2.xyz
 vless://ebfdccb6-7416-4b6e-860d-98587344d500@yh1.dtku41.xyz:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=lg1.freessr2.xyz&serviceName=&path=/xyakws&host=lg1.freessr2.xyz
+vless://ebfdccb6-7416-4b6e-860d-98587344d500@yh6.dtku41.xyz:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=lg1.freessr2.xyz&serviceName=&path=/xyakws&host=lg1.freessr2.xyz
