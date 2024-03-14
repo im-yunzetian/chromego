@@ -14,7 +14,6 @@ hysteria://www.dtku40.xyz:18490?peer=bing.com&auth=dongtaiwang.com&insecure=1&up
 hysteria://www.dtku50.xyz:18470?peer=www.amazon.cn&auth=&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=18470&obfs=&protocol=udp&fastopen=1
 hysteria://www2.dtku48.xyz:22334?peer=&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=22334&obfs=&protocol=udp&fastopen=1
 ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206b2F0cys3dmRhU09iNE5zeFd3Q0JRbGw0cVR3UHUvZGhwZWdpSUducWQ5Yz1Ad3d3LmR0a3U0NC54eXo6MjIzMzU=
-tuic://1a0a455e-4207-44be-b5a0-062747671570:dongtaiwang.com@64.31.55.18:11223?sni=&congestion_control=bbr&udp_relay_mode=native&alpn=h3&allow_insecure=0
 vless://ebfdccb6-7416-4b6e-860d-98587344d500@fbi.gov:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=lg1.freessr2.xyz&serviceName=&path=/xyakws&host=lg1.freessr2.xyz
 vless://ebfdccb6-7416-4b6e-860d-98587344d500@yh1.dtku41.xyz:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=lg1.freessr2.xyz&serviceName=&path=/xyakws&host=lg1.freessr2.xyz
 vless://ebfdccb6-7416-4b6e-860d-98587344d500@yh6.dtku41.xyz:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=lg1.freessr2.xyz&serviceName=&path=/xyakws&host=lg1.freessr2.xyz
