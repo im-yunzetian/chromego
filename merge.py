@@ -60,7 +60,7 @@ def process_clash(data, index):
             else:
                 security = 'tls'
 
-            proxy = f"vless://{uuid}@{server}:{port}?security={security}&allowInsecure{insecure}&flow={flow}&type={network}&fp={fp}&pbk={publicKey}&sid={short_id}&sni={sni}&serviceName={grpc_serviceName}&path={ws_path}&host={ws_headers_host}"
+            proxy = f"vless://{uuid}@{server}:{port}?security={security}&allowInsecure={insecure}&flow={flow}&type={network}&fp={fp}&pbk={publicKey}&sid={short_id}&sni={sni}&serviceName={grpc_serviceName}&path={ws_path}&host={ws_headers_host}"
 
             if proxy in merged_proxies:
                 print(proxy, '已存在')
@@ -76,6 +76,7 @@ def process_clash(data, index):
             alterId = proxy.get("alterId", "")
             network = proxy.get("network", "")
             tls = int(proxy.get("tls", 0))
+
             if tls == 0:
                 security = "none"
             elif tls == 1:
@@ -83,9 +84,10 @@ def process_clash(data, index):
             sni = proxy.get("servername", "")
             ws_path = proxy.get('ws-opts', {}).get('path', '')
             ws_headers_host = proxy.get('ws-opts', {}).get('headers', {}).get('host', '')
+            insecure = int(proxy.get("skip-cert-verify", 0))
 
-            proxy = f"vmess://{uuid}@{server}:{port}?security={security}&type={network}&sni={sni}&path={ws_path}&host={ws_headers_host}"
-
+            proxy = f"vmess://{uuid}@{server}:{port}?security={security}&allowInsecure={insecure}&type={network}&sni={sni}&path={ws_path}&host={ws_headers_host}"
+            
             if proxy in merged_proxies:
                 print(proxy, '已存在')
             else:
