@@ -2,6 +2,7 @@ import base64
 import json
 import logging
 import urllib.request
+import traceback
 
 import yaml
 
@@ -18,6 +19,7 @@ def process_urls(url_file, processor):
                 data = response.read().decode('utf-8')
                 processor(data, index)
             except Exception as e:
+                traceback.print_exc()
                 logging.error(f"Error processing URL {url}: {e}")
     except Exception as e:
         logging.error(f"Error reading file {url_file}: {e}")
@@ -80,9 +82,9 @@ def process_clash(data, index):
                 security = "tls"
             sni = proxy.get("servername", "")
             ws_path = proxy.get('ws-opts', {}).get('path', '')
-            ws_headers_host = proxy.get('ws-opts', {}).get('headers', {}).get('Host', '')
+            ws_headers_host = proxy.get('ws-opts', {}).get('headers', {}).get('host', '')
 
-            proxy = f"vmess://{uuid}@{server}:{port}?security={security}&allowInsecure{insecure}&type={network}&fp={fp}&sni={sni}&path={ws_path}&host={ws_headers_host}"
+            proxy = f"vmess://{uuid}@{server}:{port}?security={security}&type={network}&sni={sni}&path={ws_path}&host={ws_headers_host}"
 
             if proxy in merged_proxies:
                 print(proxy, '已存在')
@@ -175,12 +177,12 @@ def process_sb(data, index):
     try:
         json_data = json.loads(data)
         # 处理 shadowtls 数据
-        server = json_data["outbounds"][1].get("server", "")
-        server_port = json_data["outbounds"][1].get("server_port", "")
+        server = json_data["outbounds"][0].get("server", "")
+        server_port = json_data["outbounds"][0].get("server_port", "")
         method = json_data["outbounds"][0].get("method", "")
         password = json_data["outbounds"][0].get("password", "")
-        version = int(json_data["outbounds"][1].get("version", 0))
-        host = json_data["outbounds"][1]["tls"].get("server_name", "")
+        version = int(json_data["outbounds"][0].get("version", 0))
+        host = json_data["outbounds"][0]["tls"].get("server_name", "")
         shadowtls_password = json_data["outbounds"][1].get("password", "")
 
         ss = f"{method}:{password}@{server}:{server_port}"
@@ -195,6 +197,7 @@ def process_sb(data, index):
             merged_proxies.sort()
 
     except Exception as e:
+        traceback.print_exc()
         logging.error(f"Error processing shadowtls data for index {index}: {e}")
 
 
