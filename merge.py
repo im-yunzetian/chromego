@@ -27,132 +27,135 @@ def process_urls(url_file, processor):
 
 # 提取clash节点
 def process_clash(data, index):
-    # 解析YAML格式的内容
-    content = yaml.safe_load(data)
+    try:
+        # 解析YAML格式的内容
+        content = yaml.safe_load(data)
 
-    # 提取proxies部分并合并到merged_proxies中
-    proxies = content.get('proxies', [])
+        # 提取proxies部分并合并到merged_proxies中
+        proxies = content.get('proxies', [])
 
-    for proxy in proxies:
-        # 如果类型是vless
-        if proxy['type'] == 'vless':
-            server = proxy.get("server", "")
-            port = int(proxy.get("port", 443))
-            udp = proxy.get("udp", "")
-            uuid = proxy.get("uuid", "")
-            network = proxy.get("network", "")
-            tls = int(proxy.get("tls", 0))
-            xudp = proxy.get("xudp", "")
-            sni = proxy.get("servername", "")
-            flow = proxy.get("flow", "")
-            publicKey = proxy.get('reality-opts', {}).get('public-key', '')
-            short_id = proxy.get('reality-opts', {}).get('short-id', '')
-            fp = proxy.get("client-fingerprint", "")
-            insecure = int(proxy.get("skip-cert-verify", 0))
-            grpc_serviceName = proxy.get('grpc-opts', {}).get('grpc-service-name', '')
+        for proxy in proxies:
+            # 如果类型是vless
+            if proxy['type'] == 'vless':
+                server = proxy.get("server", "")
+                port = int(proxy.get("port", 443))
+                udp = proxy.get("udp", "")
+                uuid = proxy.get("uuid", "")
+                network = proxy.get("network", "")
+                tls = int(proxy.get("tls", 0))
+                xudp = proxy.get("xudp", "")
+                sni = proxy.get("servername", "")
+                flow = proxy.get("flow", "")
+                publicKey = proxy.get('reality-opts', {}).get('public-key', '')
+                short_id = proxy.get('reality-opts', {}).get('short-id', '')
+                fp = proxy.get("client-fingerprint", "")
+                insecure = int(proxy.get("skip-cert-verify", 0))
+                grpc_serviceName = proxy.get('grpc-opts', {}).get('grpc-service-name', '')
 
-            ws_path = proxy.get('ws-opts', {}).get('path', '')
-            ws_headers_host = proxy.get('ws-opts', {}).get('headers', {}).get('Host', '')
-            if tls == 0:
-                security = 'none'
-            elif tls == 1 and publicKey != '':
-                security = 'reality'
-            else:
-                security = 'tls'
+                ws_path = proxy.get('ws-opts', {}).get('path', '')
+                ws_headers_host = proxy.get('ws-opts', {}).get('headers', {}).get('Host', '')
+                if tls == 0:
+                    security = 'none'
+                elif tls == 1 and publicKey != '':
+                    security = 'reality'
+                else:
+                    security = 'tls'
 
-            proxy = f"vless://{uuid}@{server}:{port}?security={security}&allowInsecure={insecure}&flow={flow}&type={network}&fp={fp}&pbk={publicKey}&sid={short_id}&sni={sni}&serviceName={grpc_serviceName}&path={ws_path}&host={ws_headers_host}"
+                proxy_res = f"vless://{uuid}@{server}:{port}?security={security}&allowInsecure={insecure}&flow={flow}&type={network}&fp={fp}&pbk={publicKey}&sid={short_id}&sni={sni}&serviceName={grpc_serviceName}&path={ws_path}&host={ws_headers_host}"
 
-            if proxy in merged_proxies:
-                print(proxy, '已存在')
-            else:
-                merged_proxies.append(proxy)
-                merged_proxies.sort()
+                if proxy_res in merged_proxies:
+                    print(proxy_res, '已存在')
+                else:
+                    merged_proxies.append(proxy_res)
+                    merged_proxies.sort()
 
-        if proxy['type'] == 'vmess':
-            server = proxy.get("server", "")
-            port = int(proxy.get("port", 443))
-            uuid = proxy.get("uuid", "")
-            # cipher = proxy.get("cipher", "")
-            alterId = proxy.get("alterId", "")
-            network = proxy.get("network", "")
-            tls = int(proxy.get("tls", 0))
+            if proxy['type'] == 'vmess':
+                server = proxy.get("server", "")
+                port = int(proxy.get("port", 443))
+                uuid = proxy.get("uuid", "")
+                # cipher = proxy.get("cipher", "")
+                alterId = proxy.get("alterId", "")
+                network = proxy.get("network", "")
+                tls = int(proxy.get("tls", 0))
 
-            if tls == 0:
-                security = "none"
-            elif tls == 1:
-                security = "tls"
-            sni = proxy.get("servername", "")
-            ws_path = proxy.get('ws-opts', {}).get('path', '')
-            ws_headers_host = proxy.get('ws-opts', {}).get('headers', {}).get('host', '')
-            insecure = int(proxy.get("skip-cert-verify", 0))
+                if tls == 0:
+                    security = "none"
+                elif tls == 1:
+                    security = "tls"
+                sni = proxy.get("servername", "")
+                ws_path = proxy.get('ws-opts', {}).get('path', '')
+                ws_headers_host = proxy.get('ws-opts', {}).get('headers', {}).get('host', '')
+                insecure = int(proxy.get("skip-cert-verify", 0))
 
-            proxy = f"vmess://{uuid}@{server}:{port}?security={security}&allowInsecure={insecure}&type={network}&sni={sni}&path={ws_path}&host={ws_headers_host}"
-            
-            if proxy in merged_proxies:
-                print(proxy, '已存在')
-            else:
-                merged_proxies.append(proxy)
-                merged_proxies.sort()
+                proxy_res = f"vmess://{uuid}@{server}:{port}?security={security}&allowInsecure={insecure}&type={network}&sni={sni}&path={ws_path}&host={ws_headers_host}"
+                
+                if proxy_res in merged_proxies:
+                    print(proxy_res, '已存在')
+                else:
+                    merged_proxies.append(proxy_res)
+                    merged_proxies.sort()
 
-        elif proxy['type'] == 'tuic':
-            server = proxy.get("server", "")
-            port = int(proxy.get("port", 443))
-            uuid = proxy.get("uuid", "")
-            password = proxy.get("password", "")
-            sni = proxy.get("sni", "")
-            insecure = int(proxy.get("skip-cert-verify", 0))
-            udp_relay_mode = proxy.get("udp-relay-mode", "naive")
-            congestion = proxy.get("congestion-controller", "bbr")
-            alpn = proxy.get("alpn", [])[0] if proxy.get("alpn") and len(proxy["alpn"]) > 0 else None
-            # tuic_meta_neko = f"tuic://{server}:{port}?uuid={uuid}&version=5&password={password}&insecure={insecure}&alpn={alpn}&mode={udp_relay_mode}"
+            elif proxy['type'] == 'tuic':
+                server = proxy.get("server", "")
+                port = int(proxy.get("port", 443))
+                uuid = proxy.get("uuid", "")
+                password = proxy.get("password", "")
+                sni = proxy.get("sni", "")
+                insecure = int(proxy.get("skip-cert-verify", 0))
+                udp_relay_mode = proxy.get("udp-relay-mode", "naive")
+                congestion = proxy.get("congestion-controller", "bbr")
+                alpn = proxy.get("alpn", [])[0] if proxy.get("alpn") and len(proxy["alpn"]) > 0 else None
+                # tuic_meta_neko = f"tuic://{server}:{port}?uuid={uuid}&version=5&password={password}&insecure={insecure}&alpn={alpn}&mode={udp_relay_mode}"
 
-            proxy = f"tuic://{uuid}:{password}@{server}:{port}?sni={sni}&congestion_control={congestion}&udp_relay_mode={udp_relay_mode}&alpn={alpn}&allow_insecure={insecure}"
+                proxy_res = f"tuic://{uuid}:{password}@{server}:{port}?sni={sni}&congestion_control={congestion}&udp_relay_mode={udp_relay_mode}&alpn={alpn}&allow_insecure={insecure}"
 
-            if proxy in merged_proxies:
-                print(proxy, '已存在')
-            else:
-                merged_proxies.append(proxy)
-                merged_proxies.sort()
+                if proxy_res in merged_proxies:
+                    print(proxy_res, '已存在')
+                else:
+                    merged_proxies.append(proxy_res)
+                    merged_proxies.sort()
 
-        elif proxy['type'] == "hysteria2":
-            server = proxy.get("server", "")
-            port = int(proxy.get("port", 443))
-            auth = proxy.get("password", "")
-            obfs = proxy.get("obfs", "")
-            obfs_password = proxy.get("obfs-password", "")
-            sni = proxy.get("sni", "")
-            insecure = int(proxy.get("skip-cert-verify", 0))
+            elif proxy['type'] == "hysteria2":
+                server = proxy.get("server", "")
+                port = int(proxy.get("port", 443))
+                auth = proxy.get("password", "")
+                obfs = proxy.get("obfs", "")
+                obfs_password = proxy.get("obfs-password", "")
+                sni = proxy.get("sni", "")
+                insecure = int(proxy.get("skip-cert-verify", 0))
 
-            proxy = f"hysteria2://{auth}@{server}:{port}?insecure={insecure}&sni={sni}&obfs={obfs}&obfs-password={obfs_password}"
+                proxy_res = f"hysteria2://{auth}@{server}:{port}?insecure={insecure}&sni={sni}&obfs={obfs}&obfs-password={obfs_password}"
 
-            if proxy in merged_proxies:
-                print(proxy, '已存在')
-            else:
-                merged_proxies.append(proxy)
-                merged_proxies.sort()
+                if proxy_res in merged_proxies:
+                    print(proxy_res, '已存在')
+                else:
+                    merged_proxies.append(proxy_res)
+                    merged_proxies.sort()
 
-        elif proxy['type'] == 'hysteria':
-            server = proxy.get("server", "")
-            port = int(proxy.get("port", 443))
-            ports = proxy.get("port", "")
-            protocol = proxy.get("protocol", "udp")
-            up_mbps = 50
-            down_mbps = 80
-            alpn = proxy.get("alpn", [])[0] if proxy.get("alpn") and len(proxy["alpn"]) > 0 else None
-            obfs = proxy.get("obfs", "")
-            insecure = int(proxy.get("skip-cert-verify", 0))
-            sni = proxy.get("sni", "")
-            fast_open = int(proxy.get("fast_open", 1))
-            auth = proxy.get("auth-str", "")
-            # 生成URL
+            elif proxy['type'] == 'hysteria':
+                server = proxy.get("server", "")
+                port = int(proxy.get("port", 443))
+                ports = proxy.get("port", "")
+                protocol = proxy.get("protocol", "udp")
+                up_mbps = 50
+                down_mbps = 80
+                alpn = proxy.get("alpn", [])[0] if proxy.get("alpn") and len(proxy["alpn"]) > 0 else None
+                obfs = proxy.get("obfs", "")
+                insecure = int(proxy.get("skip-cert-verify", 0))
+                sni = proxy.get("sni", "")
+                fast_open = int(proxy.get("fast_open", 1))
+                auth = proxy.get("auth-str", "")
+                # 生成URL
 
-            proxy = f"hysteria://{server}:{port}?peer={sni}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&mport={ports}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}"
+                proxy_res = f"hysteria://{server}:{port}?peer={sni}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&mport={ports}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}"
 
-            if proxy in merged_proxies:
-                print(proxy, '已存在')
-            else:
-                merged_proxies.append(proxy)
-                merged_proxies.sort()
+                if proxy_res in merged_proxies:
+                    print(proxy_res, '已存在')
+                else:
+                    merged_proxies.append(proxy_res)
+                    merged_proxies.sort()
+    except Exception as e:
+        traceback.print_exc()
 
 
 def process_naive(data, index):
