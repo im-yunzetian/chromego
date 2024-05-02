@@ -21,4 +21,4 @@ vless://85beb960-236b-4634-81ce-6ad66652f928@109.104.152.101:13982?security=real
 vless://ebfdccb6-7416-4b6e-860d-98587344d500@yh6.dtku41.xyz:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=lg1.freessr2.xyz&serviceName=&path=/xyakws&host=lg1.freessr2.xyz
 vless://ebfdccb6-7416-4b6e-860d-98587344d500@yh7.dtku41.xyz:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=lg1.freessr2.xyz&serviceName=&path=/xyakws&host=lg1.freessr2.xyz
 vless://ebfdccb6-7416-4b6e-860d-98587344d500@yh9.dtku41.xyz:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=lg1.freessr2.xyz&serviceName=&path=/xyakws&host=lg1.freessr2.xyz
-vmess://ef8c954e-014f-4b36-8273-9b5086afab34@104.16.104.34:8080?security=none&allowInsecure=1&type=ws&sni=dual-nothing-prep-exit.trycloudflare.com&path=ef8c954e-014f-4b36-8273-9b5086afab34-vm&host=dual-nothing-prep-exit.trycloudflare.com
+vmess://ef8c954e-014f-4b36-8273-9b5086afab34@yh4.dtku41.xyz:8080?security=none&allowInsecure=1&type=ws&sni=dual-nothing-prep-exit.trycloudflare.com&path=ef8c954e-014f-4b36-8273-9b5086afab34-vm&host=dual-nothing-prep-exit.trycloudflare.com
