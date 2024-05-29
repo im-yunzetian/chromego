@@ -1,7 +1,7 @@
 https://ZG9uZ3RhaXdhbmcuY29tOmRvbmd0YWl3YW5nLmNvbUB3d3cuZHRrdTUwLnh5ejo0NDM=
 https://ZG9uZ3RhaXdhbmcuY29tOmRvbmd0YWl3YW5nLmNvbUBuYWl2ZTE5LmNmY2RuMy54eXo6NDQz
-hysteria2://dongtaiwang.com@104.192.224.140:40391?insecure=1&sni=www.bing.com
-hysteria2://dongtaiwang.com@104.192.224.141:40391?insecure=1&sni=www.bing.com
+hysteria2://dongtaiwang.com@104.192.224.140:62894?insecure=1&sni=www.bing.com
+hysteria2://dongtaiwang.com@104.192.224.141:62894?insecure=1&sni=www.bing.com
 hysteria2://dongtaiwang.com@109.104.152.89:22441?insecure=1&sni=www.bing.com&obfs=&obfs-password=
 hysteria://108.181.5.133:26022?peer=bing.com&auth=dongtaiwang.com&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=&protocol=udp&fastopen=1
 hysteria://108.181.5.22:44557?peer=bing.com&auth=&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=44557&obfs=&protocol=udp&fastopen=1
