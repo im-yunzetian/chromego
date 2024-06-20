@@ -6,6 +6,7 @@ hysteria://clash1.dtku47.xyz:11223?peer=&auth=O5tQQiW2xKf5&insecure=0&upmbps=50&
 hysteria://hy1.dtku47.xyz:22334?peer=&auth=lASdKzWK0VxL&insecure=0&upmbps=50&downmbps=80&alpn=h3&mport=22334&obfs=&protocol=udp&fastopen=1
 hysteria://hy2.dtku47.xyz:15566?peer=&auth=jQrGpwSqp34P&insecure=0&upmbps=50&downmbps=80&alpn=h3&mport=15566&obfs=&protocol=udp&fastopen=1
 ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206b2F0cys3dmRhU09iNE5zeFd3Q0JRbGw0cVR3UHUvZGhwZWdpSUducWQ5Yz1Ad3d3LmR0a3U0NC54eXo6MjIzMzU=
+tuic://760d4891-63ab-40db-98c7-1219ae1b92df:dongtaiwang.com@109.104.152.186:44550?sni=&congestion_control=bbr&udp_relay_mode=native&alpn=h3&allow_insecure=0
 vless://85beb960-236b-4634-81ce-6ad66652f928@109.104.152.101:13982?security=reality&allowInsecure=0&flow=None&type=tcp&fp=chrome&pbk=HjmsLPRaQqSqtdMMpIpmpoJOKhC0rAOUCHXnz0E89RE&sid=22f6b74f02cc88a6&sni=itunes.apple.com&serviceName=&path=&host=
 vless://ebfdccb6-7416-4b6e-860d-98587344d500@yh1.dtku41.xyz:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=lg1.freessr2.xyz&serviceName=&path=/xyakws&host=lg1.freessr2.xyz
 vless://ebfdccb6-7416-4b6e-860d-98587344d500@yh4.dtku41.xyz:443?security=tls&allowInsecure=0&flow=&type=ws&fp=chrome&pbk=&sid=&sni=lg1.freessr2.xyz&serviceName=&path=/xyakws&host=lg1.freessr2.xyz
