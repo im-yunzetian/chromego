@@ -1,12 +1,12 @@
 https://ZG9uZ3RhaXdhbmcuY29tOmRvbmd0YWl3YW5nLmNvbUB3d3cuZHRrdTUwLnh5ejo0NDM=
 https://ZG9uZ3RhaXdhbmcuY29tOmRvbmd0YWl3YW5nLmNvbUBuYWl2ZTE5LmNmY2RuMy54eXo6NDQz
-hysteria2://dongtaiwang.com@51.159.2.179:23499?insecure=1&sni=bing.com
-hysteria://104.192.224.139:42113?peer=bing.com&auth=dongtaiwang.com&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=&protocol=udp&fastopen=1
-hysteria://23.170.40.77:30009?peer=bing.com&auth=&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=30009&obfs=&protocol=udp&fastopen=1
+hysteria2://dongtaiwang.com@208.87.243.123:33599?insecure=1&sni=bing.com
+hysteria2://dongtaiwang.com@38.114.103.210:30647?insecure=1&sni=bing.com
+hysteria://166.1.18.52:41363?peer=bing.com&auth=dongtaiwang.com&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=&protocol=udp&fastopen=1
+hysteria://208.87.243.123:38268?peer=www.microsoft.com&auth=dongtaiwang.com&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=&protocol=udp&fastopen=1
 hysteria://clash1.dtku47.xyz:11223?peer=&auth=O5tQQiW2xKf5&insecure=0&upmbps=50&downmbps=80&alpn=h3&mport=11223&obfs=&protocol=udp&fastopen=1
 hysteria://hy1.dtku47.xyz:22334?peer=&auth=lASdKzWK0VxL&insecure=0&upmbps=50&downmbps=80&alpn=h3&mport=22334&obfs=&protocol=udp&fastopen=1
 hysteria://hy2.dtku47.xyz:15566?peer=&auth=jQrGpwSqp34P&insecure=0&upmbps=50&downmbps=80&alpn=h3&mport=15566&obfs=&protocol=udp&fastopen=1
-tuic://285524a5-18ae-4bf4-8e89-473dfdc3a212:dongtaiwang.com@www2.dtku44.xyz:11224?sni=&congestion_control=bbr&udp_relay_mode=native&alpn=h3&allow_insecure=0
 vmess://29eebb60-b27b-4a9d-bba5-947763d9205e@104.16.148.244:2086?security=none&allowInsecure=0&type=ws&sni=ip006.freegradely.xyz&path=github.com/Alvin9999&host=
 vmess://29eebb60-b27b-4a9d-bba5-947763d9205e@104.19.32.46:2086?security=none&allowInsecure=0&type=ws&sni=ip006.dtku47.xyz&path=github.com/Alvin9999&host=
 vmess://29eebb60-b27b-4a9d-bba5-947763d9205e@104.19.38.62:2086?security=none&allowInsecure=0&type=ws&sni=ip005.dtku47.xyz&path=github.com/Alvin9999&host=
