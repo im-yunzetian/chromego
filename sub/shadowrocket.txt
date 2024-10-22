@@ -1,7 +1,7 @@
 https://ZG9uZ3RhaXdhbmcuY29tOmRvbmd0YWl3YW5nLmNvbUBuYWl2ZTI0LmNmY2RuMy54eXo6NDQz
 https://ZG9uZ3RhaXdhbmcuY29tOmRvbmd0YWl3YW5nLmNvbUBuYWl2ZTIzLmNmY2RuMy54eXo6NDQz
 hysteria2://dongtaiwang.com@185.22.152.93:47382,20000-30000?insecure=1&sni=www.bing.com
-hysteria://46.17.43.223:12311?peer=bing.com&auth=dongtaiwang.com&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=dongtaiwang.com&protocol=udp&fastopen=1
+hysteria://46.17.43.223:23142?peer=bing.com&auth=dongtaiwang.com&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=dongtaiwang.com&protocol=udp&fastopen=1
 hysteria://clash1.dtku47.xyz:11223?peer=&auth=O5tQQiW2xKf5&insecure=0&upmbps=50&downmbps=80&alpn=h3&mport=11223&obfs=&protocol=udp&fastopen=1
 hysteria://hy1.dtku47.xyz:22334?peer=&auth=lASdKzWK0VxL&insecure=0&upmbps=50&downmbps=80&alpn=h3&mport=22334&obfs=&protocol=udp&fastopen=1
 hysteria://hy2.dtku47.xyz:15566?peer=&auth=jQrGpwSqp34P&insecure=0&upmbps=50&downmbps=80&alpn=h3&mport=15566&obfs=&protocol=udp&fastopen=1
