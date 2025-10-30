@@ -1,6 +1,8 @@
 .DS_Store
 HELP.md
 .venv
+__pycache__
+uv.lock
 
 ### STS ###
 .apt_generated
