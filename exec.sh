@@ -1,5 +1,5 @@
 #!/bin/bash
-.venv/bin/python merge.py
+uv run merge.py
 git add .
 git commit -m "update"
 git push
