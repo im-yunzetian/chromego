@@ -1,10 +1,11 @@
-https://ZG9uZ3RhaXdhbmcuY29tOmRvbmd0YWl3YW5nLmNvbUBuYWl2ZTIuNTQxODI0Lnh5ejoxMTIwMA==
+https://ZG9uZ3RhaXdhbmcuY29tOmRvbmd0YWl3YW5nLmNvbUBuYWl2ZTEuMzM2ODkyLnh5ejoyMjMzOA==
 hysteria2://dongtaiwang.com@2001:bc8:32d7:302::11:20088?insecure=1&sni=apple.com&obfs=&obfs-password=
 hysteria2://dongtaiwang.com@2001:bc8:32d7:302::17:20088?insecure=1&sni=apple.com&obfs=&obfs-password=
 hysteria2://dongtaiwang.com@[2001:bc8:32d7:302::11]:20088?insecure=1&sni=apple.com
-hysteria://109.104.153.91:37519,10000-20000?peer=apple.com&auth=dongtaiwang.com&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=&protocol=udp&fastopen=1
+hysteria://109.104.154.97:48429,10000-20000?peer=apple.com&auth=dongtaiwang.com&insecure=1&upmbps=11&downmbps=55&alpn=h3&obfs=&protocol=udp&fastopen=1
+hysteria://2001:bc8:32d7:158::2:50011?peer=apple.com&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=50011&obfs=&protocol=udp&fastopen=1
 hysteria://2001:bc8:32d7:158::4:50011?peer=apple.com&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=50011&obfs=&protocol=udp&fastopen=1
-hysteria://62.210.127.217:50011?peer=apple.com&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=50011&obfs=&protocol=udp&fastopen=1
+hysteria://62.210.10.186:50011?peer=apple.com&auth=dongtaiwang.com&insecure=1&upmbps=50&downmbps=80&alpn=h3&mport=50011&obfs=&protocol=udp&fastopen=1
 hysteria://clash1.dtku47.xyz:11223?peer=&auth=O5tQQiW2xKf5&insecure=0&upmbps=50&downmbps=80&alpn=h3&mport=11223&obfs=&protocol=udp&fastopen=1
 hysteria://hy1.dtku47.xyz:22334?peer=&auth=lASdKzWK0VxL&insecure=0&upmbps=50&downmbps=80&alpn=h3&mport=22334&obfs=&protocol=udp&fastopen=1
 hysteria://hy2.dtku47.xyz:15566?peer=&auth=jQrGpwSqp34P&insecure=0&upmbps=50&downmbps=80&alpn=h3&mport=15566&obfs=&protocol=udp&fastopen=1
